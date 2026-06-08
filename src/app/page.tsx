@@ -8,9 +8,9 @@ import { DigitalWorld } from "@/components/sections/digital-world";
 import { Books } from "@/components/sections/books";
 import { Articles } from "@/components/sections/articles";
 import { PublicationsSection } from "@/components/sections/publications";
-import { Career } from "@/components/sections/career";
-import { Freelancing } from "@/components/sections/freelancing";
-import { Services } from "@/components/sections/services";
+import { CareerPlatforms } from "@/components/sections/career";
+import { Platforms } from "@/components/sections/freelancing";
+import { Expertise } from "@/components/sections/services";
 import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
@@ -26,9 +26,9 @@ export default function Home() {
       <Books />
       <Articles />
       <PublicationsSection />
-      <Career />
-      <Freelancing />
-      <Services />
+      <CareerPlatforms />
+      <Platforms />
+      <Expertise />
       <Contact />
     </>
   );

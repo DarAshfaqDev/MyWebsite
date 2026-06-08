@@ -8,14 +8,14 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { getCareerPlatforms, getCareerRegions } from "@/lib/data";
 
-export function Career() {
+export function CareerPlatforms() {
   const regions = getCareerRegions();
 
   return (
     <Section
-      id="career"
-      title="Career Hub"
-      subtitle="Job platforms and career resources by region."
+      id="career-platforms"
+      title="Career Platforms I Follow"
+      subtitle="Job and career platforms across different regions — for reference and discovery."
       className="bg-zinc-50/50 dark:bg-zinc-900/50"
     >
       {regions.map((region) => (

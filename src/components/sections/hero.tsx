@@ -3,9 +3,10 @@
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  Eye,
-  Mail,
-  FileText,
+  Globe,
+  User,
+  BookOpen,
+  Compass,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProfile } from "@/lib/data";
@@ -79,22 +80,28 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-wrap items-center justify-center gap-3"
         >
-          <a href="#contact">
+          <a href="#websites">
             <Button variant="default" size="lg">
-              <Mail className="mr-2 h-4 w-4" />
-              Contact Me
+              <Globe className="mr-2 h-4 w-4" />
+              My Websites
             </Button>
           </a>
-          <a href="#projects">
-            <Button variant="ghost" size="lg">
-              <Eye className="mr-2 h-4 w-4" />
-              Projects
+          <a href="#profiles">
+            <Button variant="outline" size="lg">
+              <User className="mr-2 h-4 w-4" />
+              My Profiles
             </Button>
           </a>
-          <a href="#knowledge">
+          <a href="#publications">
+            <Button variant="secondary" size="lg">
+              <BookOpen className="mr-2 h-4 w-4" />
+              My Publications
+            </Button>
+          </a>
+          <a href="#about">
             <Button variant="ghost" size="lg">
-              <FileText className="mr-2 h-4 w-4" />
-              Publications
+              <Compass className="mr-2 h-4 w-4" />
+              Explore My World
             </Button>
           </a>
         </motion.div>
@@ -110,7 +117,7 @@ export function Hero() {
           href="#about"
           className="flex flex-col items-center gap-1 text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
         >
-          <span className="text-xs font-medium">Scroll</span>
+          <span className="text-xs font-medium">Explore</span>
           <ArrowDown className="h-4 w-4 animate-bounce" />
         </a>
       </motion.div>

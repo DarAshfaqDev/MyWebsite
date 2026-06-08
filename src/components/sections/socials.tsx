@@ -52,9 +52,9 @@ export function Socials() {
 
   return (
     <Section
-      id="socials"
-      title="Connect With Me"
-      subtitle="Follow me across the web — let's stay connected."
+      id="profiles"
+      title="My Profiles"
+      subtitle="Discover my presence across the web — platforms, communities, and profiles."
       className="bg-zinc-50/50 dark:bg-zinc-900/50"
     >
       <SectionGrid>

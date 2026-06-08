@@ -78,8 +78,10 @@ export function Footer() {
           <p className="text-xs text-zinc-400 dark:text-zinc-500">
             &copy; {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>
-          <p className="text-xs text-zinc-400 dark:text-zinc-500 flex items-center gap-1">
-            Built with <Heart className="h-3 w-3 text-red-500 fill-red-500" /> using Next.js
+          <p className="text-xs text-zinc-400 dark:text-zinc-500 flex items-center gap-3">
+            <span className="flex items-center gap-1">Built with <Heart className="h-3 w-3 text-red-500 fill-red-500" /> using Next.js</span>
+            <span className="text-zinc-300 dark:text-zinc-600">|</span>
+            <a href="/dashboard/login" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">Dashboard</a>
           </p>
         </div>
       </div>
