@@ -1,0 +1,121 @@
+import type {
+  Profile,
+  About,
+  Skill,
+  SocialLink,
+  Website,
+  Project,
+  Book,
+  Article,
+  Publication,
+  CareerPlatform,
+  FreelancingPlatform,
+  Service,
+  DigitalResource,
+  NavItem,
+  SiteConfig,
+} from "./types";
+
+import siteConfig from "../../data/site-config.json";
+import profileData from "../../data/profile.json";
+import aboutData from "../../data/about.json";
+import skillsData from "../../data/skills.json";
+import socialsData from "../../data/socials.json";
+import websitesData from "../../data/websites.json";
+import projectsData from "../../data/projects.json";
+import booksData from "../../data/books.json";
+import articlesData from "../../data/articles.json";
+import publicationsData from "../../data/publications.json";
+import careerPlatformsData from "../../data/career-platforms.json";
+import freelancingPlatformsData from "../../data/freelancing-platforms.json";
+import servicesData from "../../data/services.json";
+import digitalResourcesData from "../../data/digital-resources.json";
+import navigationData from "../../data/navigation.json";
+
+export function getSiteConfig(): SiteConfig {
+  return siteConfig as SiteConfig;
+}
+
+export function getProfile(): Profile {
+  return profileData as Profile;
+}
+
+export function getAbout(): About {
+  return aboutData as About;
+}
+
+export function getSkills(): Skill[] {
+  return skillsData as Skill[];
+}
+
+export function getSkillCategories(): string[] {
+  const skills = getSkills();
+  return [...new Set(skills.map((s) => s.category))];
+}
+
+export function getSkillsByCategory(category: string): Skill[] {
+  return getSkills().filter((s) => s.category === category);
+}
+
+export function getSocials(): SocialLink[] {
+  return socialsData as SocialLink[];
+}
+
+export function getWebsites(): Website[] {
+  return websitesData as Website[];
+}
+
+export function getWebsiteCategories(): string[] {
+  const websites = getWebsites();
+  return [...new Set(websites.map((w) => w.category))];
+}
+
+export function getProjects(): Project[] {
+  return projectsData as Project[];
+}
+
+export function getBooks(): Book[] {
+  return booksData as Book[];
+}
+
+export function getBookCategories(): string[] {
+  const books = getBooks();
+  return [...new Set(books.map((b) => b.category))];
+}
+
+export function getArticles(): Article[] {
+  return articlesData as Article[];
+}
+
+export function getArticleBySlug(slug: string): Article | undefined {
+  return getArticles().find((a) => a.slug === slug);
+}
+
+export function getPublications(): Publication[] {
+  return publicationsData as Publication[];
+}
+
+export function getCareerPlatforms(): CareerPlatform[] {
+  return careerPlatformsData as CareerPlatform[];
+}
+
+export function getCareerRegions(): string[] {
+  const platforms = getCareerPlatforms();
+  return [...new Set(platforms.map((p) => p.region))];
+}
+
+export function getFreelancingPlatforms(): FreelancingPlatform[] {
+  return freelancingPlatformsData as FreelancingPlatform[];
+}
+
+export function getServices(): Service[] {
+  return servicesData as Service[];
+}
+
+export function getDigitalResources(): DigitalResource[] {
+  return digitalResourcesData as DigitalResource[];
+}
+
+export function getNavigation(): NavItem[] {
+  return navigationData as NavItem[];
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Web Development",
+    "description": "Build modern, responsive websites and web applications using HTML, CSS, JavaScript, and modern frameworks.",
+    "skills": ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind CSS", "React"],
+    "pricingModel": "Project-based"
+  },
+  {
+    "title": "Backend Development",
+    "description": "Design and develop robust server-side applications, RESTful APIs, and database solutions.",
+    "skills": ["Node.js", "Express", "MongoDB", "REST API", "SQL"],
+    "pricingModel": "Project-based"
+  },
+  {
+    "title": "UI/UX Design",
+    "description": "Create intuitive and visually appealing user interfaces with a focus on user experience and accessibility.",
+    "skills": ["Figma", "Responsive Design", "UI/UX Design", "Wireframing"],
+    "pricingModel": "Project-based or hourly"
+  },
+  {
+    "title": "Portfolio Websites",
+    "description": "Professional portfolio websites to showcase your work, skills, and personal brand.",
+    "skills": ["HTML", "CSS", "JavaScript", "Responsive Design", "UI Design"],
+    "pricingModel": "Project-based"
+  }
+]

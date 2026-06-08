@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Fiverr",
+    "url": "https://fiverr.com",
+    "description": "Global freelance marketplace for digital services",
+    "profileUrl": "https://fiverr.com/kamraan"
+  },
+  {
+    "name": "Upwork",
+    "url": "https://upwork.com",
+    "description": "World's largest freelance talent marketplace",
+    "profileUrl": "https://upwork.com/freelancers/kamraan"
+  },
+  {
+    "name": "Freelancer",
+    "url": "https://freelancer.com",
+    "description": "Global freelancing and crowdsourcing marketplace",
+    "profileUrl": "https://freelancer.com/u/kamraan"
+  },
+  {
+    "name": "Toptal",
+    "url": "https://toptal.com",
+    "description": "Exclusive network of top freelance talent",
+    "profileUrl": "https://toptal.com/resume/kamraan"
+  },
+  {
+    "name": "Contra",
+    "url": "https://contra.com",
+    "description": "Commission-free freelance platform",
+    "profileUrl": "https://contra.com/kamraan"
+  },
+  {
+    "name": "PeoplePerHour",
+    "url": "https://peopleperhour.com",
+    "description": "UK freelance jobs marketplace",
+    "profileUrl": "https://peopleperhour.com/freelancer/kamraan"
+  },
+  {
+    "name": "Guru",
+    "url": "https://guru.com",
+    "description": "Global freelance job platform",
+    "profileUrl": "https://guru.com/freelancer/kamraan"
+  },
+  {
+    "name": "Turing",
+    "url": "https://turing.com",
+    "description": "Long-term remote jobs for developers",
+    "profileUrl": "https://turing.com/profile/kamraan"
+  },
+  {
+    "name": "Arc.dev",
+    "url": "https://arc.dev",
+    "description": "Remote developer jobs in top companies",
+    "profileUrl": "https://arc.dev/developer/kamraan"
+  }
+]

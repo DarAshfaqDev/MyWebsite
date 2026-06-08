@@ -1,0 +1,19 @@
+[
+  { "name": "HTML", "category": "Frontend Development", "level": 95 },
+  { "name": "CSS", "category": "Frontend Development", "level": 90 },
+  { "name": "JavaScript", "category": "Frontend Development", "level": 88 },
+  { "name": "Bootstrap", "category": "Frontend Development", "level": 85 },
+  { "name": "Tailwind CSS", "category": "Frontend Development", "level": 82 },
+  { "name": "React", "category": "Frontend Development", "level": 78 },
+  { "name": "Node.js", "category": "Backend Development", "level": 80 },
+  { "name": "Express", "category": "Backend Development", "level": 78 },
+  { "name": "REST API", "category": "Backend Development", "level": 82 },
+  { "name": "MongoDB", "category": "Backend Development", "level": 75 },
+  { "name": "SQL", "category": "Backend Development", "level": 72 },
+  { "name": "Git", "category": "DevOps", "level": 85 },
+  { "name": "GitHub", "category": "DevOps", "level": 88 },
+  { "name": "Responsive Design", "category": "Frontend Development", "level": 90 },
+  { "name": "UI/UX Design", "category": "Design", "level": 82 },
+  { "name": "Figma", "category": "Design", "level": 78 },
+  { "name": "CodePen", "category": "Design", "level": 75 }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Main Portfolio",
+    "description": "A comprehensive portfolio website showcasing my skills, projects, and professional journey as a full stack developer.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    "liveUrl": "https://dar-ishfaq-1.github.io/my_portfolio/",
+    "githubUrl": "https://github.com/Dar-Ishfaq-1/my_portfolio"
+  },
+  {
+    "title": "Backend Portfolio",
+    "description": "Dedicated backend development portfolio highlighting server-side projects, APIs, and database work.",
+    "technologies": ["Node.js", "Express", "MongoDB", "REST API"],
+    "liveUrl": "https://dar-ishfaq-backend.github.io/MyPortfolioWebSite/",
+    "githubUrl": "https://github.com/DarAshfaqDev/MyPortfolioWebSite"
+  },
+  {
+    "title": "Mubarakh Soob Portfolio",
+    "description": "A professional portfolio website built for client Mubarakh Soob, featuring modern design and smooth interactions.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    "liveUrl": "https://darashfaqdev.github.io/Mubarakh-Soob-Portfolio/",
+    "githubUrl": "https://github.com/DarAshfaqDev/Mubarakh-Soob-Portfolio"
+  }
+]

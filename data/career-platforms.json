@@ -1,0 +1,16 @@
+[
+  { "name": "LinkedIn", "url": "https://linkedin.com", "description": "Professional networking and job search platform", "region": "Global" },
+  { "name": "Indeed", "url": "https://indeed.com", "description": "World's largest job search engine", "region": "Global" },
+  { "name": "Glassdoor", "url": "https://glassdoor.com", "description": "Jobs, company reviews, and salary data", "region": "Global" },
+  { "name": "Wellfound", "url": "https://wellfound.com", "description": "Startup jobs and talent marketplace", "region": "Global" },
+  { "name": "Remote OK", "url": "https://remoteok.com", "description": "Remote jobs from around the world", "region": "Global" },
+  { "name": "FlexJobs", "url": "https://flexjobs.com", "description": "Curated remote and flexible jobs", "region": "Global" },
+  { "name": "Naukri", "url": "https://naukri.com", "description": "India's #1 job platform", "region": "India" },
+  { "name": "Internshala", "url": "https://internshala.com", "description": "Internships and entry-level jobs in India", "region": "India" },
+  { "name": "Unstop", "url": "https://unstop.com", "description": "Competitions, internships, and jobs for students", "region": "India" },
+  { "name": "Bayt", "url": "https://bayt.com", "description": "Middle East's leading job platform", "region": "Middle East" },
+  { "name": "GulfTalent", "url": "https://gulftalent.com", "description": "Executive hiring in the Middle East", "region": "Middle East" },
+  { "name": "StepStone", "url": "https://stepstone.de", "description": "Leading job platform in Europe", "region": "Europe" },
+  { "name": "Reed", "url": "https://reed.co.uk", "description": "UK's largest job site", "region": "Europe" },
+  { "name": "CV-Library", "url": "https://cv-library.co.uk", "description": "UK job board with millions of CVs", "region": "Europe" }
+]

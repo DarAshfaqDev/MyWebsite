@@ -1,0 +1,16 @@
+[
+  { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/ishfaq-ahmad-dar-aaa277240/", "icon": "link2", "username": "Ishfaq Dar" },
+  { "platform": "GitHub", "url": "https://github.com/Dar-Ishfaq-1", "icon": "star", "username": "Dar-Ishfaq-1" },
+  { "platform": "GitHub (Alt)", "url": "https://github.com/DarAshfaqDev", "icon": "star", "username": "DarAshfaqDev" },
+  { "platform": "X (Twitter)", "url": "https://x.com/Dar_ishaq1", "icon": "link2", "username": "@Dar_ishaq1" },
+  { "platform": "Instagram", "url": "https://www.instagram.com/darishfaq469/", "icon": "hash", "username": "@darishfaq469" },
+  { "platform": "Facebook", "url": "https://www.facebook.com/profile.php?id=61567635054020", "icon": "user", "username": "Ishfaq Dar" },
+  { "platform": "Medium", "url": "https://medium.com/@moeedkamraan1123", "icon": "globe", "username": "@moeedkamraan1123" },
+  { "platform": "Reddit", "url": "https://www.reddit.com/user/DarIshfaq/", "icon": "message-circle", "username": "DarIshfaq" },
+  { "platform": "Behance", "url": "https://www.behance.net/ishfaqdar3", "icon": "globe", "username": "ishfaqdar3" },
+  { "platform": "CodePen", "url": "https://codepen.io/Ishfaq-Dar-the-animator", "icon": "globe", "username": "Ishfaq Dar" },
+  { "platform": "Dribbble", "url": "https://dribbble.com/mohammadkamraan196", "icon": "hash", "username": "mohammadkamraan196" },
+  { "platform": "Figma", "url": "https://www.figma.com/@darishfaq321b", "icon": "globe", "username": "darishfaq321b" },
+  { "platform": "Slack", "url": "https://app.slack.com/client/T0AV9V2JJKV", "icon": "message-circle", "username": "Ishfaq Dar" },
+  { "platform": "Email", "url": "mailto:moeedkamraan1123@gmail.com", "icon": "mail", "username": "moeedkamraan1123@gmail.com" }
+]

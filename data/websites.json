@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Main Portfolio",
+    "description": "My primary portfolio website showcasing projects, skills, and experience.",
+    "url": "https://dar-ishfaq-1.github.io/my_portfolio/",
+    "category": "Portfolio"
+  },
+  {
+    "title": "Backend Portfolio",
+    "description": "Backend development portfolio highlighting server-side projects and API work.",
+    "url": "https://dar-ishfaq-backend.github.io/MyPortfolioWebSite/",
+    "category": "Backend"
+  },
+  {
+    "title": "Mubarakh Soob Portfolio",
+    "description": "Client portfolio project for Mubarakh Soob.",
+    "url": "https://darashfaqdev.github.io/Mubarakh-Soob-Portfolio/",
+    "category": "Projects"
+  }
+]

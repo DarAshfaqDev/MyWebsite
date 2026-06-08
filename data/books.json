@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Python for Data Analytics",
+    "description": "A comprehensive guide to data analytics using Python, covering Pandas, NumPy, visualization, and real-world projects.",
+    "version": "2.0",
+    "category": "Python",
+    "pages": 450,
+    "tags": ["python", "data-analytics", "pandas", "numpy", "visualization"],
+    "readUrl": "/books/python-data-analytics",
+    "pdfUrl": "/books/python-data-analytics.pdf",
+    "epubUrl": "/books/python-data-analytics.epub"
+  },
+  {
+    "title": "SQL Mastery",
+    "description": "From basics to advanced: SQL query optimization, window functions, CTEs, and database design patterns.",
+    "version": "1.5",
+    "category": "SQL",
+    "pages": 320,
+    "tags": ["sql", "postgresql", "database", "query-optimization"],
+    "readUrl": "/books/sql-mastery",
+    "pdfUrl": "/books/sql-mastery.pdf",
+    "epubUrl": "/books/sql-mastery.epub"
+  },
+  {
+    "title": "Power BI: From Data to Dashboard",
+    "description": "Build production-ready Power BI dashboards with DAX, data modeling, and best practices.",
+    "version": "1.0",
+    "category": "Power BI",
+    "pages": 280,
+    "tags": ["power-bi", "dax", "dashboard", "data-modeling"],
+    "readUrl": "/books/power-bi-dashboards",
+    "pdfUrl": "/books/power-bi-dashboards.pdf",
+    "epubUrl": "/books/power-bi-dashboards.epub"
+  },
+  {
+    "title": "Machine Learning Engineering",
+    "description": "Practical guide to building, deploying, and maintaining ML systems in production environments.",
+    "version": "1.0",
+    "category": "Machine Learning",
+    "pages": 380,
+    "tags": ["machine-learning", "mlops", "deployment", "engineering"],
+    "readUrl": "/books/ml-engineering",
+    "pdfUrl": "/books/ml-engineering.pdf",
+    "epubUrl": "/books/ml-engineering.epub"
+  },
+  {
+    "title": "Generative AI & LLMs",
+    "description": "Hands-on guide to building applications with large language models, RAG, and agentic AI systems.",
+    "version": "1.0",
+    "category": "Generative AI",
+    "pages": 410,
+    "tags": ["generative-ai", "llms", "rag", "agents", "prompt-engineering"],
+    "readUrl": "/books/genai-llms",
+    "pdfUrl": "/books/genai-llms.pdf",
+    "epubUrl": "/books/genai-llms.epub"
+  },
+  {
+    "title": "Full Stack Development with Next.js",
+    "description": "Build modern full-stack applications with Next.js, TypeScript, Prisma, and Tailwind CSS.",
+    "version": "2.0",
+    "category": "Full Stack Development",
+    "pages": 500,
+    "tags": ["nextjs", "react", "typescript", "prisma", "tailwind"],
+    "readUrl": "/books/nextjs-fullstack",
+    "pdfUrl": "/books/nextjs-fullstack.pdf",
+    "epubUrl": "/books/nextjs-fullstack.epub"
+  }
+]

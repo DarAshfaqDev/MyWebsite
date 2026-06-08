@@ -1,0 +1,12 @@
+[
+  { "title": "Google Photos", "url": "https://photos.google.com", "description": "Photo albums and media", "platform": "Google" },
+  { "title": "Google Drive", "url": "https://drive.google.com", "description": "Documents and files", "platform": "Google" },
+  { "title": "Dropbox", "url": "https://dropbox.com", "description": "Cloud file storage", "platform": "Dropbox" },
+  { "title": "Notion", "url": "https://notion.so", "description": "Workspace and documentation", "platform": "Notion" },
+  { "title": "Substack", "url": "https://kamraan.substack.com", "description": "Newsletter publication", "platform": "Substack" },
+  { "title": "Medium", "url": "https://medium.com/@kamraan", "description": "Articles and blog posts", "platform": "Medium" },
+  { "title": "ResearchGate", "url": "https://researchgate.net/profile/Kamraan", "description": "Research publications", "platform": "ResearchGate" },
+  { "title": "Google Scholar", "url": "https://scholar.google.com/citations?user=KAMRAAN", "description": "Academic citations", "platform": "Google Scholar" },
+  { "title": "ORCID", "url": "https://orcid.org/0000-0000-0000-0000", "description": "Researcher identifier", "platform": "ORCID" },
+  { "title": "GitHub Repositories", "url": "https://github.com/kamraan", "description": "Open source code and projects", "platform": "GitHub" }
+]

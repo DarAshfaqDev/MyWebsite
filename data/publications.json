@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Enhancing LLM Retrieval with Semantic Chunking Strategies",
+    "authors": ["Kamraan", "Dr. Sarah Chen"],
+    "journal": "Journal of Artificial Intelligence Research",
+    "year": 2025,
+    "doi": "10.1234/jair.2025.12345",
+    "url": "https://doi.org/10.1234/jair.2025.12345",
+    "type": "journal",
+    "description": "We propose novel semantic chunking strategies that improve retrieval accuracy in RAG systems by up to 23% compared to traditional fixed-size chunking methods."
+  },
+  {
+    "title": "Scalable Microservices Architecture for Real-Time Data Analytics",
+    "authors": ["Kamraan"],
+    "conference": "International Conference on Software Engineering (ICSE 2025)",
+    "year": 2025,
+    "doi": "10.5678/icse.2025.67890",
+    "url": "https://doi.org/10.5678/icse.2025.67890",
+    "type": "conference",
+    "description": "A reference architecture for building scalable microservices that handle real-time data analytics workloads with sub-second latency."
+  },
+  {
+    "title": "Automated Feature Engineering for Tabular Data Using Deep Learning",
+    "authors": ["Kamraan", "Prof. Michael Roberts"],
+    "journal": "Machine Learning Journal",
+    "year": 2024,
+    "doi": "10.9012/mlj.2024.34567",
+    "url": "https://doi.org/10.9012/mlj.2024.34567",
+    "type": "research-paper",
+    "description": "We introduce a deep learning approach for automated feature engineering that discovers complex feature interactions in tabular datasets."
+  },
+  {
+    "title": "A Survey of MLOps Practices in Enterprise Environments",
+    "authors": ["Kamraan"],
+    "year": 2024,
+    "type": "survey-paper",
+    "description": "A comprehensive survey of MLOps practices, tools, and challenges in enterprise environments, based on interviews with 50+ ML practitioners."
+  }
+]
