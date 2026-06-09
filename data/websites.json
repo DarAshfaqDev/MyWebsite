@@ -1,14 +1,14 @@
 [
   {
-    "title": "Main Portfolio",
+    "title": "Data analyst",
     "description": "My primary portfolio website showcasing projects, skills, and experience.",
     "url": "https://dar-ishfaq-1.github.io/my_portfolio/",
     "category": "Portfolio"
   },
   {
-    "title": "Backend Portfolio",
+    "title": "backend",
     "description": "Backend development portfolio highlighting server-side projects and API work.",
-    "url": "https://dar-ishfaq-backend.github.io/MyPortfolioWebSite/",
+    "url": "https://darashfaqdev.github.io/MyPortfolioWebSite/",
     "category": "Backend"
   },
   {
