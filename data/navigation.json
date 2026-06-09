@@ -1,10 +1,10 @@
 [
   { "href": "#hero", "label": "Home", "section": "hero" },
   { "href": "#about", "label": "About", "section": "about" },
-  { "href": "#websites", "label": "Websites", "section": "websites" },
-  { "href": "#profiles", "label": "Profiles", "section": "profiles" },
+  { "href": "#skills", "label": "Skills", "section": "skills" },
   { "href": "#projects", "label": "Projects", "section": "projects" },
   { "href": "#publications", "label": "Publications", "section": "publications" },
-  { "href": "#platforms", "label": "Platforms", "section": "platforms" },
-  { "href": "#contact", "label": "Contact", "section": "contact" }
+  { "href": "#books", "label": "Library", "section": "books" },
+  { "href": "#articles", "label": "Articles", "section": "articles" },
+  { "href": "#profiles", "label": "Profiles", "section": "profiles" }
 ]

@@ -4,9 +4,9 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
-interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+interface SectionProps extends Omit<React.HTMLAttributes<HTMLElement>, "title"> {
   id: string;
-  title?: string;
+  title?: string | React.ReactNode;
   subtitle?: string;
   className?: string;
   children: React.ReactNode;

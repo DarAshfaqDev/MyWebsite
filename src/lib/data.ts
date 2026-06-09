@@ -40,6 +40,10 @@ export function getProfile(): Profile {
   return profileData as Profile;
 }
 
+export function getRoles(): string[] {
+  return (profileData as Profile).roles || [];
+}
+
 export function getAbout(): About {
   return aboutData as About;
 }

@@ -1,9 +1,10 @@
 {
   "name": "Ishfaq Dar",
-  "title": "Developer · Web Designer · Lifelong Learner · Creator",
-  "tagline": "Exploring technology, web development, design, and digital creativity.",
-  "introduction": "I'm a self-driven developer and designer exploring the world of web development, UI/UX design, and digital creativity. I build things on the internet — websites, tools, and experiences — while continuously learning and sharing what I discover.",
+  "title": "Full Stack Developer · Data Analyst · AI Enthusiast · Researcher",
+  "tagline": "Exploring the intersection of software engineering, data science, artificial intelligence, and digital creativity. Building things that matter.",
+  "introduction": "I'm a multidisciplinary technologist working across full-stack development, data analysis, machine learning, and AI systems. I build platforms, analyze data, train models, write technical content, and explore the digital frontier — sharing what I discover along the way.",
   "photo": "/profile.png",
+  "roles": ["Full Stack Developer", "Data Analyst", "Data Scientist", "Backend Engineer", "AI Enthusiast", "Researcher", "Technical Writer", "Business Analyst"],
   "email": "moeedkamraan1123@gmail.com",
   "phone": "",
   "location": "",

@@ -4,12 +4,7 @@ export interface Profile {
   tagline: string;
   introduction: string;
   photo: string;
-  resumeUrl?: string;
-  cvUrl?: string;
-  academicCvUrl?: string;
-  researchCvUrl?: string;
-  portfolioPdfUrl?: string;
-  certificationsUrl?: string;
+  roles: string[];
   email: string;
   phone?: string;
   location?: string;

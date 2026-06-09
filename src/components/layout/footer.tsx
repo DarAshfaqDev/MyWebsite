@@ -17,9 +17,9 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-50 mb-2">
-              {profile.name}
-              <span className="text-blue-500">.</span>
+            <h3 className="text-lg font-bold mb-2">
+              <span className="gradient-text">{profile.name}</span>
+              <span className="text-zinc-400 dark:text-zinc-500">.</span>
             </h3>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 max-w-xs">
               {profile.tagline}

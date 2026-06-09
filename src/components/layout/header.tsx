@@ -38,10 +38,10 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-18">
           <a
             href="#hero"
-            className="text-lg font-bold text-zinc-900 dark:text-zinc-50"
+            className="text-lg font-bold"
           >
-            {profile.name.split(" ")[0]}
-            <span className="text-blue-500">.</span>
+            <span className="gradient-text">{profile.name.split(" ")[0]}</span>
+            <span className="text-zinc-400 dark:text-zinc-500">.</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-1">

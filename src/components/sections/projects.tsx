@@ -1,12 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, BookOpen, FileText, GitBranch } from "lucide-react";
+import { ExternalLink, GitBranch, Sparkles, BookOpen } from "lucide-react";
 import { Section, SectionGrid } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { getProjects } from "@/lib/data";
+
+const projectGradients = [
+  "from-purple-400 to-pink-500",
+  "from-emerald-400 to-teal-500",
+  "from-blue-400 to-cyan-500",
+  "from-orange-400 to-rose-500",
+  "from-violet-400 to-purple-500",
+];
 
 export function Projects() {
   const projects = getProjects();
@@ -14,7 +22,11 @@ export function Projects() {
   return (
     <Section
       id="projects"
-      title="Featured Projects"
+      title={
+        <span>
+          Featured <span className="gradient-text">Projects</span>
+        </span>
+      }
       subtitle="Open-source work, side projects, and production platforms I've built."
       className="bg-zinc-50/50 dark:bg-zinc-900/50"
     >
@@ -27,25 +39,53 @@ export function Projects() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="h-full flex flex-col group hover:border-purple-200 dark:hover:border-purple-700">
-              <CardHeader>
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold text-sm">
-                  {project.title.charAt(0)}
+            <Card className="h-full flex flex-col group hover:border-purple-200 dark:hover:border-purple-700 card-premium overflow-hidden">
+              <div className={`h-1.5 w-full bg-gradient-to-r ${projectGradients[index % projectGradients.length]}`} />
+              <CardContent className="p-6 flex flex-col h-full">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${projectGradients[index % projectGradients.length]} flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0`}>
+                    {project.title.charAt(0)}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-lg text-zinc-900 dark:text-zinc-100 mb-1">
+                      {project.title}
+                    </h3>
+                    {project.liveUrl && (
+                      <div className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        <span className="text-xs text-green-600 dark:text-green-400 font-medium">Live</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <CardTitle className="mt-3 text-lg">{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 flex-1 mb-4">
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 flex-1 mb-4 leading-relaxed line-clamp-3">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.technologies.map((tech) => (
+                  {project.technologies.slice(0, 5).map((tech) => (
                     <Badge key={tech} variant="secondary" className="text-xs">
                       {tech}
                     </Badge>
                   ))}
+                  {project.technologies.length > 5 && (
+                    <Badge variant="outline" className="text-xs">
+                      +{project.technologies.length - 5}
+                    </Badge>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="default" size="sm">
+                        <Sparkles className="mr-1.5 h-3.5 w-3.5" />
+                        Live Demo
+                      </Button>
+                    </a>
+                  )}
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
@@ -54,43 +94,7 @@ export function Projects() {
                     >
                       <Button variant="outline" size="sm">
                         <GitBranch className="mr-1.5 h-3.5 w-3.5" />
-                        Code
-                      </Button>
-                    </a>
-                  )}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="default" size="sm">
-                        <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
-                        Demo
-                      </Button>
-                    </a>
-                  )}
-                  {project.documentationUrl && (
-                    <a
-                      href={project.documentationUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="ghost" size="sm">
-                        <BookOpen className="mr-1.5 h-3.5 w-3.5" />
-                        Docs
-                      </Button>
-                    </a>
-                  )}
-                  {project.caseStudyUrl && (
-                    <a
-                      href={project.caseStudyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="ghost" size="sm">
-                        <FileText className="mr-1.5 h-3.5 w-3.5" />
-                        Case Study
+                        Source Code
                       </Button>
                     </a>
                   )}
