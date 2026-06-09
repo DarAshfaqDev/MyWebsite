@@ -1,5 +1,11 @@
 [
   {
+    "title": "CodeVerse Academy",
+    "description": "A premium Next.js learning platform for web development, data science, AI/ML, interview prep, practice work, certificates, blogs, and guided reading. Features interactive code playground, AI revision assistant, certificate studio, and comprehensive tutorial books.",
+    "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "MongoDB", "Express", "Monaco Editor", "Recharts", "Chart.js"],
+    "githubUrl": "https://github.com/DarAshfaqDev/Code-Verse_Academy"
+  },
+  {
     "title": "LifeOS AI",
     "description": "A full-stack SaaS platform combining time management, career planning, habit tracking, and AI coaching into one unified dashboard. Features AI-powered coaching via OpenAI/Gemini/Claude, gamification (XP, levels, streaks), Docker deployment, and CI/CD.",
     "technologies": ["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "Docker", "AI", "Tailwind CSS", "Recharts", "Zustand"],
