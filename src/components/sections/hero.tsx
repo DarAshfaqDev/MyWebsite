@@ -7,6 +7,7 @@ import {
   User,
   BookOpen,
   Compass,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProfile } from "@/lib/data";
@@ -90,6 +91,12 @@ export function Hero() {
             <Button variant="outline" size="lg">
               <User className="mr-2 h-4 w-4" />
               My Profiles
+            </Button>
+          </a>
+          <a href="https://lifeos-aiproject-n13mbnbl7-dar-ishfaq-backends-projects.vercel.app" target="_blank" rel="noopener noreferrer">
+            <Button variant="default" size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white border-0">
+              <Sparkles className="mr-2 h-4 w-4" />
+              LifeOS AI
             </Button>
           </a>
           <a href="#publications">

@@ -1,5 +1,11 @@
 [
   {
+    "title": "LifeOS AI",
+    "description": "A full-stack SaaS platform combining time management, career planning, habit tracking, and AI coaching into one unified dashboard. Features AI-powered coaching via OpenAI/Gemini/Claude, gamification (XP, levels, streaks), Docker deployment, and CI/CD.",
+    "technologies": ["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "Docker", "AI", "Tailwind CSS", "Recharts", "Zustand"],
+    "githubUrl": "https://github.com/DarAshfaqDev/lifeos-ai"
+  },
+  {
     "title": "Main Portfolio",
     "description": "A comprehensive portfolio website showcasing my skills, projects, and professional journey as a full stack developer.",
     "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
