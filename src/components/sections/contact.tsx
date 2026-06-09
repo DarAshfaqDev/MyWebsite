@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, Check, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Send, Check, Loader2, MessageCircle } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,21 +11,34 @@ import { getProfile } from "@/lib/data";
 export function Contact() {
   const profile = getProfile();
   const [submitted, setSubmitted] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailto = `mailto:${profile.email}?subject=Contact from ${formData.name}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.open(mailto);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: "", email: "", message: "" });
+    setSending(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Failed");
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch {
+      alert("Failed to send. Please try again later.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const contactItems = [
@@ -93,8 +106,10 @@ export function Contact() {
                     placeholder="Tell me what's on your mind..."
                   />
                 </div>
-                <Button type="submit" variant="default" size="lg" className="w-full">
-                  {submitted ? (
+                <Button type="submit" variant="default" size="lg" className="w-full" disabled={sending}>
+                  {sending ? (
+                    <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</>
+                  ) : submitted ? (
                     <><Check className="mr-2 h-4 w-4" /> Message Sent!</>
                   ) : (
                     <><Send className="mr-2 h-4 w-4" /> Send Message</>
