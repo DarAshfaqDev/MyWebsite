@@ -2,6 +2,8 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 
+const googleEnabled = !!(process.env.AUTH_GOOGLE_ID && process.env.AUTH_GOOGLE_SECRET);
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Credentials({
@@ -23,10 +25,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         return null;
       },
     }),
-    Google({
-      clientId: process.env.AUTH_GOOGLE_ID,
-      clientSecret: process.env.AUTH_GOOGLE_SECRET,
-    }),
+    ...(googleEnabled
+      ? [
+          Google({
+            clientId: process.env.AUTH_GOOGLE_ID!,
+            clientSecret: process.env.AUTH_GOOGLE_SECRET!,
+          }),
+        ]
+      : []),
   ],
   pages: {
     signIn: "/dashboard/login",
