@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { ScrollToBottom } from "@/components/ui/scroll-to-bottom";
 import { About } from "@/components/sections/about";
 import { Websites } from "@/components/sections/websites";
 import { Socials } from "@/components/sections/socials";
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ScrollToBottom />
       <About />
       <Websites />
       <Socials />
