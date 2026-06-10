@@ -10,21 +10,21 @@
     "title": "LifeOS AI",
     "description": "A full-stack SaaS platform combining time management, career planning, habit tracking, and AI coaching into one unified dashboard. Features AI-powered coaching via OpenAI/Gemini/Claude, gamification (XP, levels, streaks), Docker deployment, and CI/CD.",
     "technologies": ["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "Docker", "AI", "Tailwind CSS", "Recharts", "Zustand"],
-    "liveUrl": "https://lifeos-ai.vercel.app",
+    "liveUrl": "https://lifeos-aiproject.vercel.app",
     "githubUrl": "https://github.com/DarAshfaqDev/lifeos-ai"
   },
   {
     "title": "Main Portfolio",
     "description": "A comprehensive portfolio website showcasing my skills, projects, and professional journey as a full stack developer.",
     "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    "liveUrl": "https://dar-ishfaq-1.github.io/my_portfolio/",
+    "liveUrl": "https://dar-ishfaq-1.github.io/My_Portfolio_Website/",
     "githubUrl": "https://github.com/Dar-Ishfaq-1/my_portfolio"
   },
   {
     "title": "Backend Portfolio",
     "description": "Dedicated backend development portfolio highlighting server-side projects, APIs, and database work.",
     "technologies": ["Node.js", "Express", "MongoDB", "REST API"],
-    "liveUrl": "https://dar-ishfaq-backend.github.io/MyPortfolioWebSite/",
+    "liveUrl": "https://darashfaqdev.github.io/MyPortfolioWebSite/",
     "githubUrl": "https://github.com/DarAshfaqDev/MyPortfolioWebSite"
   },
   {
