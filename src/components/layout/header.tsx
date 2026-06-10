@@ -3,6 +3,7 @@
 import * as React from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { getNavigation, getProfile } from "@/lib/data";
@@ -13,6 +14,9 @@ export function Header() {
   const [scrolled, setScrolled] = React.useState(false);
   const navItems = getNavigation();
   const profile = getProfile();
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/dashboard")) return null;
 
   React.useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
