@@ -16,5 +16,17 @@
     "description": "Client portfolio project for Mubarakh Soob.",
     "url": "https://darashfaqdev.github.io/Mubarakh-Soob-Portfolio/",
     "category": "Projects"
+  },
+  {
+    "title": "Nur Academy",
+    "description": "Islamic e-learning platform with YouTube courses, streak tracking, progress notes, and certificate generation.",
+    "url": "https://nur-academy.vercel.app",
+    "category": "Learning Platform"
+  },
+  {
+    "title": "Al-Kowser Academy",
+    "description": "Premium Islamic LMS with student/admin dashboards, course player, certificates, bookmarks, and support ticketing.",
+    "url": "https://al-kowser-academy.vercel.app",
+    "category": "Learning Platform"
   }
 ]
