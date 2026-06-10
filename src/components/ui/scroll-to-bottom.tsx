@@ -9,14 +9,14 @@ export function ScrollToBottom() {
   };
 
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40">
+    <div className="flex justify-end px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mt-2 mb-2">
       <Button
         variant="ghost"
         size="sm"
         onClick={scrollToBottom}
-        title="Move to bottom"
+        title="move to bottom"
       >
-        Bottom
+        move to bottom
         <ArrowDown className="ml-1.5 h-4 w-4" />
       </Button>
     </div>
