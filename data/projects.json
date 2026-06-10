@@ -42,6 +42,12 @@
     "githubUrl": "https://github.com/DarAshfaqDev/Nur-Academy"
   },
   {
+    "title": "Ali Nawaz Academy",
+    "description": "Islamic learning platform offering Aalim courses, Seerah, and more. Built with React and Vite.",
+    "technologies": ["React", "Vite", "JavaScript", "Tailwind CSS"],
+    "liveUrl": "https://ali-nawaz-online-academy.vercel.app"
+  },
+  {
     "title": "Al-Kowser Academy",
     "description": "Premium Islamic Learning Management System (LMS) built with React, Vite, and Tailwind CSS. Full student/admin dashboards, course catalog with video player, bookmarking, support ticketing with screenshots, certificate generation, and Supabase auth for OAuth (Google/GitHub). Zustand for state management.",
     "technologies": ["React", "Vite", "TypeScript", "Tailwind CSS", "Supabase", "Zustand", "html2canvas", "jspdf", "lucide-react", "react-hot-toast", "react-router-dom"],
