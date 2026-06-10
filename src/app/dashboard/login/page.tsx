@@ -9,6 +9,14 @@ export default function LoginPage() {
   const [error, setError] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [googleLoading, setGoogleLoading] = React.useState(false);
+  const googleEnabledRef = React.useRef(false);
+
+  React.useEffect(() => {
+    fetch("/api/auth/providers")
+      .then((r) => r.json())
+      .then((providers) => { googleEnabledRef.current = "google" in providers; })
+      .catch(() => {});
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -92,6 +100,10 @@ export default function LoginPage() {
           type="button"
           disabled={googleLoading}
           onClick={() => {
+            if (!googleEnabledRef.current) {
+              setError("Google sign-in is not configured. Use email/password or set up Google OAuth credentials.");
+              return;
+            }
             setGoogleLoading(true);
             signIn("google", { callbackUrl: "/dashboard" });
           }}
