@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function ScrollToBottom() {
   const scrollToBottom = () => {
@@ -8,15 +9,16 @@ export function ScrollToBottom() {
   };
 
   return (
-    <div className="flex justify-center py-6">
-      <button
+    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40">
+      <Button
+        variant="ghost"
+        size="sm"
         onClick={scrollToBottom}
-        className="flex flex-col items-center gap-1 text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors cursor-pointer"
-        aria-label="Scroll to bottom"
+        title="Move to bottom"
       >
-        <span className="text-xs font-medium tracking-wider uppercase">Move to Bottom</span>
-        <ArrowDown className="h-4 w-4 animate-bounce" />
-      </button>
+        Bottom
+        <ArrowDown className="ml-1.5 h-4 w-4" />
+      </Button>
     </div>
   );
 }
