@@ -181,6 +181,9 @@ const apiFileUrl = (filePath: string, mode: string) => {
   return `/api/books/pdf?file=${encodeURIComponent(fileName)}&mode=${mode}`;
 };
 
+const bookFileName = (filePath: string) =>
+  (filePath.split("/").pop() || filePath.replace(/^\//, ""));
+
 export function Books() {
   const books = getBooks();
   const islamicBooks = books.filter((b) => b.group === "islamic").map((b) => ({
@@ -195,6 +198,7 @@ export function Books() {
     tags: sb.tags,
     pdfUrl: apiFileUrl(sb.source, "download"),
     readUrl: apiFileUrl(sb.source, "read"),
+    fileParam: bookFileName(sb.source),
     author: sb.author,
     pages: undefined,
     version: undefined,
@@ -258,7 +262,12 @@ export function Books() {
               index={i}
               variant="study"
               onPay={(b) => setPayBook(b)}
-              onRead={(b) => window.open((b as any).readUrl + "#toolbar=0", "_blank")}
+              onRead={(b) =>
+                window.open(
+                  `/books/read?file=${encodeURIComponent((b as any).fileParam || "")}`,
+                  "_blank"
+                )
+              }
             />
           ))}
         </SectionGrid>
