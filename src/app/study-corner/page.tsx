@@ -110,7 +110,7 @@ export default function StudyCornerPage() {
                 <div className="flex items-center justify-between pt-3 border-t border-zinc-100 dark:border-zinc-800 mt-auto">
                   <span className="text-[10px] text-zinc-400"><FileText className="h-3 w-3 inline mr-1" />{book.size}</span>
                   <div className="flex gap-1.5">
-                    <button onClick={() => window.open(book.source, "_blank")}
+                    <button onClick={() => window.open(`/books/read?file=${encodeURIComponent(book.source.split("/").pop() || "")}&paid=true&title=${encodeURIComponent(book.title)}`, "_blank")}
                       className="px-3 py-1.5 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-black text-[10px] font-medium hover:opacity-90 transition-opacity">
                       Read
                     </button>
