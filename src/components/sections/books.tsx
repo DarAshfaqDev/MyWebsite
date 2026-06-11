@@ -1,13 +1,15 @@
 "use client";
 
+import * as React from "react";
 import { motion } from "framer-motion";
-import { Download, BookOpen, BookMarked, Star } from "lucide-react";
+import { Download, BookOpen, BookMarked, Star, ShoppingCart } from "lucide-react";
 import { Section, SectionGrid } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { getBooks } from "@/lib/data";
 import type { Book } from "@/lib/types";
+import { PaymentModal } from "@/components/ui/payment-modal";
 
 const categoryColors: Record<string, { gradient: string; border: string }> = {
   Python: { gradient: "from-blue-500/10 to-blue-600/5 dark:from-blue-500/20", border: "border-blue-200/50 dark:border-blue-700/30" },
@@ -21,7 +23,7 @@ const categoryColors: Record<string, { gradient: string; border: string }> = {
 
 const defaultColors = { gradient: "from-zinc-500/10 to-zinc-600/5 dark:from-zinc-500/20", border: "border-zinc-200/50 dark:border-zinc-700/30" };
 
-function BookCard({ book, index }: { book: Book; index: number }) {
+function BookCard({ book, index, onPay }: { book: Book; index: number; onPay: (book: Book) => void }) {
   const colors = categoryColors[book.category] || defaultColors;
 
   return (
@@ -71,31 +73,11 @@ function BookCard({ book, index }: { book: Book; index: number }) {
             ))}
           </div>
           <div className="flex flex-wrap gap-2 mt-auto">
-            {book.readUrl && (
-              <a href={book.readUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="default" size="sm">
-                  <BookOpen className="mr-1.5 h-3.5 w-3.5" />
-                  Read Online
-                </Button>
-              </a>
-            )}
-            <div className="flex gap-1">
-              {book.pdfUrl && (
-                <a href={book.pdfUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" size="sm">
-                    <Download className="mr-1 h-3 w-3" />
-                    PDF
-                  </Button>
-                </a>
-              )}
-              {book.epubUrl && (
-                <a href={book.epubUrl} download>
-                  <Button variant="outline" size="sm">
-                    EPUB
-                  </Button>
-                </a>
-              )}
-            </div>
+            <button onClick={() => onPay(book)}
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-all active:scale-[0.98]">
+              <ShoppingCart className="h-4 w-4" />
+              Pay &amp; Download
+            </button>
           </div>
         </CardContent>
       </Card>
@@ -107,6 +89,7 @@ export function Books() {
   const books = getBooks();
   const islamicBooks = books.filter((b) => b.group === "islamic");
   const techBooks = books.filter((b) => b.group === "tech");
+  const [payBook, setPayBook] = React.useState<Book | null>(null);
 
   return (
     <Section
@@ -129,7 +112,7 @@ export function Books() {
         </div>
         <SectionGrid>
           {islamicBooks.map((book, i) => (
-            <BookCard key={book.title} book={book} index={i} />
+            <BookCard key={book.title} book={book} index={i} onPay={setPayBook} />
           ))}
         </SectionGrid>
       </div>
@@ -144,10 +127,17 @@ export function Books() {
         </div>
         <SectionGrid>
           {techBooks.map((book, i) => (
-            <BookCard key={book.title} book={book} index={i} />
+            <BookCard key={book.title} book={book} index={i} onPay={setPayBook} />
           ))}
         </SectionGrid>
       </div>
+
+      <PaymentModal
+        open={!!payBook}
+        onClose={() => setPayBook(null)}
+        bookTitle={payBook?.title || ""}
+        pdfUrl={payBook?.pdfUrl || ""}
+      />
     </Section>
   );
 }
