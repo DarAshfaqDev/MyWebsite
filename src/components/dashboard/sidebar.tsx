@@ -24,7 +24,7 @@ const navItems = [
   { href: "/dashboard/content", label: "Content", icon: FileText },
   { href: "/dashboard/productivity", label: "Productivity", icon: CheckSquare },
   { href: "/dashboard/platforms", label: "Platforms", icon: Globe },
-  { href: "/study-corner", label: "Study Corner", icon: BookOpen },
+  { href: "/dashboard/payments", label: "Payments", icon: BookOpen },
 ];
 
 export function DashboardSidebar() {

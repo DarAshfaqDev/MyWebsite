@@ -4,7 +4,7 @@
   { "href": "#skills", "label": "Skills", "section": "skills" },
   { "href": "#projects", "label": "Projects", "section": "projects" },
   { "href": "#publications", "label": "Publications", "section": "publications" },
-  { "href": "/study-corner", "label": "Study Corner", "section": "study-corner" },
+  { "href": "/dashboard/payments", "label": "Payments", "section": "payments" },
   { "href": "#books", "label": "Library", "section": "books" },
   { "href": "#articles", "label": "Articles", "section": "articles" },
   { "href": "#profiles", "label": "Profiles", "section": "profiles" }
