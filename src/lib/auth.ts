@@ -40,8 +40,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     async signIn({ user, account }) {
       if (account?.provider === "google") {
-        const allowedEmail = process.env.DASHBOARD_USERNAME;
-        return user.email === allowedEmail;
+        const allowedEmail = (process.env.DASHBOARD_USERNAME || "").toLowerCase();
+        return !!user.email && user.email.toLowerCase() === allowedEmail;
       }
       return true;
     },

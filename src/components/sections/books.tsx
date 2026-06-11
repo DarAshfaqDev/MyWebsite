@@ -163,12 +163,12 @@ function BookCard({ book, index, variant, onPay, onRead }: {
               </>
             ) : (
               <>
-                <button onClick={() => requireAuth(() => onRead?.(book))}
+                <button onClick={() => onRead?.(book)}
                   className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all active:scale-[0.98]">
                   <BookOpen className="h-4 w-4" />
                   Read
                 </button>
-                <button onClick={() => requireAuth(() => window.open(book.pdfUrl, "_blank"))}
+                <button onClick={() => window.open(book.pdfUrl, "_blank")}
                   className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-all active:scale-[0.98]">
                   <Download className="h-4 w-4" />
                   Download PDF
