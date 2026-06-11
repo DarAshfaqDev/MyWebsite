@@ -8,13 +8,22 @@ interface PaymentModalProps {
   onClose: () => void;
   bookTitle: string;
   pdfUrl: string;
+  pages?: number;
 }
 
 const UPI_ID = "mohdashfaq1416-1@okicici";
 const ACCOUNT_NAME = "Ishfaq Dar";
-const SUGGESTED_PRICE = 99;
 
-export function PaymentModal({ open, onClose, bookTitle, pdfUrl }: PaymentModalProps) {
+function priceFromPages(pages?: number): number {
+  if (!pages || pages <= 100) return 49;
+  if (pages <= 200) return 79;
+  if (pages <= 300) return 99;
+  if (pages <= 400) return 149;
+  return 199;
+}
+
+export function PaymentModal({ open, onClose, bookTitle, pdfUrl, pages }: PaymentModalProps) {
+  const price = priceFromPages(pages);
   const paymentRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -37,7 +46,7 @@ export function PaymentModal({ open, onClose, bookTitle, pdfUrl }: PaymentModalP
 
   if (!open) return null;
 
-  const upiLink = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(ACCOUNT_NAME)}&am=${SUGGESTED_PRICE}&cu=INR&tn=${encodeURIComponent(`Payment for: ${bookTitle}`)}`;
+  const upiLink = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(ACCOUNT_NAME)}&am=${price}&cu=INR&tn=${encodeURIComponent(`Payment for: ${bookTitle}`)}`;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={onClose}>
@@ -56,7 +65,7 @@ export function PaymentModal({ open, onClose, bookTitle, pdfUrl }: PaymentModalP
             You&apos;re about to download <strong className="text-zinc-700 dark:text-zinc-300">{bookTitle}</strong>.
           </p>
           <p className="text-xs text-zinc-400 mb-6">
-            Your contribution helps me create more quality content. Suggested contribution: <strong className="text-zinc-600 dark:text-zinc-400">₹{SUGGESTED_PRICE}</strong>
+            Your contribution helps me create more quality content. Suggested contribution: <strong className="text-zinc-600 dark:text-zinc-400">₹{price}</strong>
           </p>
         </div>
 
@@ -82,7 +91,7 @@ export function PaymentModal({ open, onClose, bookTitle, pdfUrl }: PaymentModalP
             <a href={upiLink} target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-opacity">
               <img src="https://img.icons8.com/color/20/google-pay-india.png" alt="" className="h-5 w-5" />
-              Pay ₹{SUGGESTED_PRICE} via UPI
+              Pay ₹{price} via UPI
             </a>
             <a href={pdfUrl} target="_blank" rel="noopener noreferrer" download
               className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 text-sm font-medium hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors">

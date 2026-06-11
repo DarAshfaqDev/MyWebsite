@@ -137,6 +137,7 @@ export function Books() {
         onClose={() => setPayBook(null)}
         bookTitle={payBook?.title || ""}
         pdfUrl={payBook?.pdfUrl || ""}
+        pages={payBook?.pages}
       />
     </Section>
   );
