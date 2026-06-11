@@ -4,6 +4,7 @@
     "description": "A comprehensive guide to data analytics using Python, covering Pandas, NumPy, visualization, and real-world projects.",
     "version": "2.0",
     "category": "Python",
+    "group": "tech",
     "pages": 450,
     "tags": ["python", "data-analytics", "pandas", "numpy", "visualization"],
     "readUrl": "/books/python-data-analytics",
@@ -15,6 +16,7 @@
     "description": "From basics to advanced: SQL query optimization, window functions, CTEs, and database design patterns.",
     "version": "1.5",
     "category": "SQL",
+    "group": "tech",
     "pages": 320,
     "tags": ["sql", "postgresql", "database", "query-optimization"],
     "readUrl": "/books/sql-mastery",
@@ -26,6 +28,7 @@
     "description": "Build production-ready Power BI dashboards with DAX, data modeling, and best practices.",
     "version": "1.0",
     "category": "Power BI",
+    "group": "tech",
     "pages": 280,
     "tags": ["power-bi", "dax", "dashboard", "data-modeling"],
     "readUrl": "/books/power-bi-dashboards",
@@ -37,6 +40,7 @@
     "description": "Practical guide to building, deploying, and maintaining ML systems in production environments.",
     "version": "1.0",
     "category": "Machine Learning",
+    "group": "tech",
     "pages": 380,
     "tags": ["machine-learning", "mlops", "deployment", "engineering"],
     "readUrl": "/books/ml-engineering",
@@ -48,6 +52,7 @@
     "description": "Hands-on guide to building applications with large language models, RAG, and agentic AI systems.",
     "version": "1.0",
     "category": "Generative AI",
+    "group": "tech",
     "pages": 410,
     "tags": ["generative-ai", "llms", "rag", "agents", "prompt-engineering"],
     "readUrl": "/books/genai-llms",
@@ -59,10 +64,38 @@
     "description": "Build modern full-stack applications with Next.js, TypeScript, Prisma, and Tailwind CSS.",
     "version": "2.0",
     "category": "Full Stack Development",
+    "group": "tech",
     "pages": 500,
     "tags": ["nextjs", "react", "typescript", "prisma", "tailwind"],
     "readUrl": "/books/nextjs-fullstack",
     "pdfUrl": "/books/nextjs-fullstack.pdf",
     "epubUrl": "/books/nextjs-fullstack.epub"
+  },
+  {
+    "title": "Preserve Creed",
+    "description": "A comprehensive guide to preserving and understanding the core Islamic creed according to the Sunni tradition.",
+    "category": "Islamic",
+    "group": "islamic",
+    "pages": 210,
+    "tags": ["islamic", "creed", "aqeedah", "sunni"],
+    "pdfUrl": "/study/books/Preserve Creed.pdf"
+  },
+  {
+    "title": "The Architecture of Sunni Islam",
+    "description": "An in-depth exploration of the structural and spiritual architecture of Sunni Islamic thought and practice.",
+    "category": "Islamic",
+    "group": "islamic",
+    "pages": 245,
+    "tags": ["islamic", "sunni", "architecture", "spirituality"],
+    "pdfUrl": "/study/books/The Architecture of Sunni Islam clean.pdf"
+  },
+  {
+    "title": "Understanding the Hanafi Path",
+    "description": "A clear and concise guide to the Hanafi school of Islamic jurisprudence, covering foundational principles and daily practice.",
+    "category": "Islamic",
+    "group": "islamic",
+    "pages": 290,
+    "tags": ["islamic", "hanafi", "fiqh", "jurisprudence"],
+    "pdfUrl": "/study/books/Understanding the Hanafi Path clean.pdf"
   }
 ]

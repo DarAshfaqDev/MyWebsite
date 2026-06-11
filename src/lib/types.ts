@@ -57,6 +57,7 @@ export interface Book {
   cover?: string;
   version?: string;
   category: string;
+  group?: "tech" | "islamic";
   pages?: number;
   tags: string[];
   readUrl?: string;
