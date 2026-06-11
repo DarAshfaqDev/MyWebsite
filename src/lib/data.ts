@@ -24,6 +24,7 @@ import socialsData from "../../data/socials.json";
 import websitesData from "../../data/websites.json";
 import projectsData from "../../data/projects.json";
 import booksData from "../../data/books.json";
+import studyBooksData from "../../data/study-books.json";
 import articlesData from "../../data/articles.json";
 import publicationsData from "../../data/publications.json";
 import careerPlatformsData from "../../data/career-platforms.json";
@@ -80,6 +81,10 @@ export function getProjects(): Project[] {
 
 export function getBooks(): Book[] {
   return booksData as Book[];
+}
+
+export function getStudyBooks(): Book[] {
+  return studyBooksData as Book[];
 }
 
 export function getBookCategories(): string[] {

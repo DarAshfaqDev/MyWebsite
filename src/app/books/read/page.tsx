@@ -164,7 +164,7 @@ function PDFReader() {
   const downloadUrl = `/api/books/pdf?file=${encodeURIComponent(fileParam || "")}&mode=download`;
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4">
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 py-8 px-4">
       {paid && (
         <div className="max-w-4xl mx-auto mb-6 p-4 rounded-2xl border-2 border-amber-200 dark:border-amber-700/50 bg-amber-50 dark:bg-amber-900/10 flex items-center justify-between gap-4 flex-wrap">
           <div>
@@ -183,7 +183,7 @@ function PDFReader() {
         <div className="flex justify-center items-center min-h-[60vh]">
           <div className="text-center">
             <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mx-auto mb-4" />
-            <p className="text-gray-500">Loading PDF...</p>
+            <p className="text-zinc-500 dark:text-zinc-400">Loading PDF...</p>
           </div>
         </div>
       )}
