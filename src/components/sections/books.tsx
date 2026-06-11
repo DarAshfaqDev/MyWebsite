@@ -177,8 +177,8 @@ function BookCard({ book, index, variant, onPay, onRead }: {
 }
 
 const apiFileUrl = (filePath: string, mode: string) => {
-  const clean = filePath.replace(/^\//, "");
-  return `/api/books/pdf?file=${encodeURIComponent(clean)}&mode=${mode}`;
+  const fileName = filePath.split("/").pop() || filePath.replace(/^\//, "");
+  return `/api/books/pdf?file=${encodeURIComponent(fileName)}&mode=${mode}`;
 };
 
 export function Books() {

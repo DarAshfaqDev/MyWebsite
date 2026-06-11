@@ -16,8 +16,8 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Missing file parameter" }, { status: 400 });
   }
 
-  const normalized = path.normalize(fileParam).replace(/^.*?(?=study\/books)/, "");
-  const filePath = path.join(process.cwd(), "public", normalized);
+  const fileName = path.basename(fileParam);
+  const filePath = path.join(process.cwd(), "private", "books", fileName);
 
   if (!fs.existsSync(filePath)) {
     return NextResponse.json({ error: "File not found" }, { status: 404 });
@@ -31,7 +31,6 @@ export async function GET(req: NextRequest) {
     ".epub": "application/epub+zip",
   };
   const contentType = contentTypes[ext] || "application/octet-stream";
-  const fileName = path.basename(filePath);
 
   if (mode === "download") {
     return new NextResponse(fileBuffer, {
