@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { getPublications } from "@/lib/data";
+import type { ArticleStatus } from "@/lib/types";
 
 const typeLabels: Record<string, string> = {
   "research-paper": "Research Paper",
@@ -27,6 +28,21 @@ const typeStyles: Record<string, { bg: string; text: string; dot: string }> = {
   "survey-paper": { bg: "bg-cyan-50 dark:bg-cyan-900/20", text: "text-cyan-700 dark:text-cyan-400", dot: "bg-cyan-500" },
 };
 
+const statusConfig: Record<ArticleStatus, { label: string; className: string }> = {
+  published: {
+    label: "Published",
+    className: "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800",
+  },
+  "in-progress": {
+    label: "In Progress",
+    className: "bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-800",
+  },
+  "coming-soon": {
+    label: "Coming Soon",
+    className: "bg-sky-50 dark:bg-sky-900/20 text-sky-700 dark:text-sky-400 border-sky-200 dark:border-sky-800",
+  },
+};
+
 export function PublicationsSection() {
   const publications = getPublications();
 
@@ -44,6 +60,7 @@ export function PublicationsSection() {
       <div className="space-y-5">
         {publications.map((pub, index) => {
           const style = typeStyles[pub.type] || typeStyles["research-paper"];
+          const pubStatus = pub.status || "published";
 
           return (
             <motion.div
@@ -52,7 +69,7 @@ export function PublicationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="p-6 rounded-2xl bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/50 dark:border-zinc-700/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 card-premium"
+              className={`p-6 rounded-2xl bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/50 dark:border-zinc-700/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 card-premium ${pubStatus === "coming-soon" ? "opacity-70" : ""}`}
             >
               <div className="flex items-start gap-4">
                 <div className={`p-3 rounded-xl ${style.bg} shrink-0 hidden sm:block`}>
@@ -70,6 +87,14 @@ export function PublicationsSection() {
                     >
                       {typeLabels[pub.type] || pub.type}
                     </Badge>
+                    {pubStatus !== "published" && (
+                      <Badge
+                        variant="secondary"
+                        className={`text-[10px] ${statusConfig[pubStatus].className}`}
+                      >
+                        {statusConfig[pubStatus].label}
+                      </Badge>
+                    )}
                   </div>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-1">
                     {pub.authors.join(", ")} · {pub.year}
@@ -94,7 +119,7 @@ export function PublicationsSection() {
                         DOI: {pub.doi}
                       </span>
                     )}
-                    {pub.url && (
+                    {pub.url ? (
                       <a
                         href={pub.url}
                         target="_blank"
@@ -105,6 +130,12 @@ export function PublicationsSection() {
                           <ExternalLink className="ml-1 h-3 w-3" />
                         </Button>
                       </a>
+                    ) : (
+                      pubStatus === "coming-soon" && (
+                        <span className="text-xs text-zinc-400 italic">
+                          Publishing soon
+                        </span>
+                      )
                     )}
                   </div>
                 </div>

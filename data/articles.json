@@ -3,11 +3,12 @@
     "title": "Building RAG Systems with LangChain and ChromaDB",
     "description": "A comprehensive guide to building production-ready RAG (Retrieval Augmented Generation) systems using LangChain and ChromaDB vector database.",
     "slug": "building-rag-systems-langchain-chromadb",
-    "content": "# Building RAG Systems\n\nRAG (Retrieval Augmented Generation) is a powerful pattern for combining retrieval systems with LLMs...\n\n## Introduction\n\nRAG systems enhance LLM outputs by retrieving relevant information from a knowledge base before generating responses...\n\n## Architecture\n\nThe typical RAG architecture consists of...\n\n## Implementation\n\nLet's build a RAG system step by step...",
+    "content": "# Building RAG Systems\n\nRAG (Retrieval Augmented Generation) is a powerful pattern for combining retrieval systems with LLMs...",
     "category": "AI",
     "tags": ["rag", "langchain", "chromadb", "llms", "ai"],
     "publishedAt": "2025-12-15",
-    "readingTime": 12
+    "readingTime": 12,
+    "status": "published"
   },
   {
     "title": "Data Pipeline Design Patterns",
@@ -17,7 +18,8 @@
     "category": "Data Engineering",
     "tags": ["data-pipelines", "etl", "architecture", "python"],
     "publishedAt": "2025-11-20",
-    "readingTime": 10
+    "readingTime": 10,
+    "status": "published"
   },
   {
     "title": "The Complete Guide to SQL Window Functions",
@@ -27,7 +29,8 @@
     "category": "SQL",
     "tags": ["sql", "window-functions", "database", "analytics"],
     "publishedAt": "2025-10-05",
-    "readingTime": 15
+    "readingTime": 15,
+    "status": "published"
   },
   {
     "title": "Multi-Agent AI Systems: Architecture and Implementation",
@@ -37,6 +40,77 @@
     "category": "AI",
     "tags": ["agents", "multi-agent", "langgraph", "ai-systems"],
     "publishedAt": "2026-01-10",
-    "readingTime": 18
+    "readingTime": 18,
+    "status": "published"
+  },
+  {
+    "title": "How to Learn JavaScript Without Tutorial Fatigue",
+    "description": "A practical guide to breaking free from tutorial hell and building real JavaScript skills through project-based learning.",
+    "slug": "how-to-learn-javascript-without-tutorial-fatigue",
+    "content": "",
+    "category": "JavaScript",
+    "tags": ["javascript", "learning", "web-development"],
+    "publishedAt": "2026-03-01",
+    "readingTime": 14,
+    "status": "published",
+    "externalUrl": "https://code-verse-academy.vercel.app/blog/how-to-learn-javascript-without-tutorial-fatigue"
+  },
+  {
+    "title": "SQL Interview Patterns Every Analyst Should Know",
+    "description": "Master the most common SQL interview patterns with real-world examples and strategies that top analysts use.",
+    "slug": "sql-interview-patterns-every-analyst-should-know",
+    "content": "",
+    "category": "SQL",
+    "tags": ["sql", "interviews", "data-analytics"],
+    "publishedAt": "2026-03-05",
+    "readingTime": 16,
+    "status": "published",
+    "externalUrl": "https://code-verse-academy.vercel.app/blog/sql-interview-patterns-every-analyst-should-know"
+  },
+  {
+    "title": "A Practical Roadmap for Machine Learning Projects",
+    "description": "Move beyond toy projects and learn how to plan, structure, and deliver real-world machine learning solutions.",
+    "slug": "a-practical-roadmap-for-machine-learning-projects",
+    "content": "",
+    "category": "Machine Learning",
+    "tags": ["machine-learning", "project-management", "mlops"],
+    "publishedAt": "2026-03-10",
+    "readingTime": 16,
+    "status": "published",
+    "externalUrl": "https://code-verse-academy.vercel.app/blog/a-practical-roadmap-for-machine-learning-projects"
+  },
+  {
+    "title": "Accessibility Checks Before You Ship a Frontend",
+    "description": "Essential accessibility checks and best practices to ensure your frontend applications work for everyone.",
+    "slug": "accessibility-checks-before-you-ship-a-frontend",
+    "content": "",
+    "category": "Frontend",
+    "tags": ["accessibility", "frontend", "a11y", "ux"],
+    "publishedAt": "2026-03-15",
+    "readingTime": 19,
+    "status": "published",
+    "externalUrl": "https://code-verse-academy.vercel.app/blog/accessibility-checks-before-you-ship-a-frontend"
+  },
+  {
+    "title": "Building Scalable APIs with FastAPI and PostgreSQL",
+    "description": "A deep dive into building production-grade APIs using FastAPI, PostgreSQL, and modern async Python patterns.",
+    "slug": "building-scalable-apis-fastapi-postgresql",
+    "content": "",
+    "category": "Backend",
+    "tags": ["fastapi", "python", "postgresql", "api"],
+    "publishedAt": "",
+    "readingTime": 0,
+    "status": "coming-soon"
+  },
+  {
+    "title": "Understanding Kubernetes for Data Workloads",
+    "description": "Learn how to orchestrate containerized data pipelines and ML training jobs using Kubernetes.",
+    "slug": "understanding-kubernetes-data-workloads",
+    "content": "",
+    "category": "DevOps",
+    "tags": ["kubernetes", "data-engineering", "mlops", "docker"],
+    "publishedAt": "",
+    "readingTime": 0,
+    "status": "in-progress"
   }
 ]

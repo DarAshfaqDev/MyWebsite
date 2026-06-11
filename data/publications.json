@@ -7,7 +7,8 @@
     "doi": "10.1234/jair.2025.12345",
     "url": "https://doi.org/10.1234/jair.2025.12345",
     "type": "journal",
-    "description": "We propose novel semantic chunking strategies that improve retrieval accuracy in RAG systems by up to 23% compared to traditional fixed-size chunking methods."
+    "description": "We propose novel semantic chunking strategies that improve retrieval accuracy in RAG systems by up to 23% compared to traditional fixed-size chunking methods.",
+    "status": "published"
   },
   {
     "title": "Scalable Microservices Architecture for Real-Time Data Analytics",
@@ -17,7 +18,8 @@
     "doi": "10.5678/icse.2025.67890",
     "url": "https://doi.org/10.5678/icse.2025.67890",
     "type": "conference",
-    "description": "A reference architecture for building scalable microservices that handle real-time data analytics workloads with sub-second latency."
+    "description": "A reference architecture for building scalable microservices that handle real-time data analytics workloads with sub-second latency.",
+    "status": "published"
   },
   {
     "title": "Automated Feature Engineering for Tabular Data Using Deep Learning",
@@ -27,13 +29,26 @@
     "doi": "10.9012/mlj.2024.34567",
     "url": "https://doi.org/10.9012/mlj.2024.34567",
     "type": "research-paper",
-    "description": "We introduce a deep learning approach for automated feature engineering that discovers complex feature interactions in tabular datasets."
+    "description": "We introduce a deep learning approach for automated feature engineering that discovers complex feature interactions in tabular datasets.",
+    "status": "published"
   },
   {
     "title": "A Survey of MLOps Practices in Enterprise Environments",
     "authors": ["Kamraan"],
     "year": 2024,
     "type": "survey-paper",
-    "description": "A comprehensive survey of MLOps practices, tools, and challenges in enterprise environments, based on interviews with 50+ ML practitioners."
+    "description": "A comprehensive survey of MLOps practices, tools, and challenges in enterprise environments, based on interviews with 50+ ML practitioners.",
+    "status": "in-progress"
+  },
+  {
+    "title": "Federated Learning for Privacy-Preserving Healthcare Analytics",
+    "authors": ["Kamraan", "Dr. Emily Park", "Prof. James Liu"],
+    "journal": "Nature Digital Medicine",
+    "year": 2026,
+    "doi": "",
+    "url": "",
+    "type": "journal",
+    "description": "A novel federated learning framework designed for privacy-sensitive healthcare environments, enabling collaborative model training without sharing patient data.",
+    "status": "coming-soon"
   }
 ]

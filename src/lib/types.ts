@@ -65,6 +65,8 @@ export interface Book {
   epubUrl?: string;
 }
 
+export type ArticleStatus = "published" | "in-progress" | "coming-soon";
+
 export interface Article {
   title: string;
   description: string;
@@ -74,6 +76,8 @@ export interface Article {
   tags: string[];
   publishedAt: string;
   readingTime?: number;
+  status?: ArticleStatus;
+  externalUrl?: string;
 }
 
 export interface Publication {
@@ -84,8 +88,9 @@ export interface Publication {
   year: number;
   doi?: string;
   url?: string;
-  type: "research-paper" | "journal" | "conference" | "thesis" | "report" | "case-study";
+  type: "research-paper" | "journal" | "conference" | "thesis" | "report" | "case-study" | "survey-paper";
   description: string;
+  status?: ArticleStatus;
 }
 
 export interface CareerPlatform {
