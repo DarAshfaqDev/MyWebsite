@@ -45,6 +45,7 @@ export default function DashboardHome() {
               { label: "Track Proposal", href: "/dashboard/freelancing" },
               { label: "Log Learning", href: "/dashboard/learning" },
               { label: "New Note", href: "/dashboard/productivity" },
+              { label: "Platforms", href: "/dashboard/platforms" },
             ].map((action) => (
               <a
                 key={action.label}

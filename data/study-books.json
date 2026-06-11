@@ -1,0 +1,122 @@
+[
+  {
+    "id": "backend-developer-interview-mastery",
+    "title": "Backend Developer Interview Mastery",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Backend", "Interviews", "Career"],
+    "description": "Backend interview preparation with practical engineering and system thinking notes.",
+    "size": "1,295 KB",
+    "source": "/study/books/Backend Developer Interview Mastery.pdf"
+  },
+  {
+    "id": "javascript-for-web-development-mastery",
+    "title": "JavaScript for Web Development Mastery",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["JavaScript", "Web Development", "Frontend"],
+    "description": "A web development reference for JavaScript fundamentals and browser-based projects.",
+    "size": "861 KB",
+    "source": "/study/books/JAVASCRIPT FOR WEB DEVELOPMENT MASTER BOOK.pdf"
+  },
+  {
+    "id": "master-english-easily",
+    "title": "Master English Easily",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Self-Development",
+    "tags": ["English", "Communication", "Language"],
+    "description": "A language-learning book for improving English fluency and confidence.",
+    "size": "943 KB",
+    "source": "/study/books/MASTER ENGLISH EASILY.pdf"
+  },
+  {
+    "id": "fresher-to-job-ready-data-analyst",
+    "title": "Fresher to Job-Ready Data Analyst",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Data Analysis", "Career", "SQL", "Python"],
+    "description": "A structured transition guide from beginner analyst to portfolio-ready candidate.",
+    "size": "3,213 KB",
+    "source": "/study/books/Fresher to Job-Ready Data Analyst.pdf"
+  },
+  {
+    "id": "english",
+    "title": "English",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Reference",
+    "tags": ["English", "Reference", "Language"],
+    "description": "English reference material for study, practice, and quick revision.",
+    "size": "1,057 KB",
+    "source": "/study/books/English.pdf"
+  },
+  {
+    "id": "book-3-advanced-backend-system-design",
+    "title": "BOOK 3 Advanced Backend and System Design",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Backend", "System Design", "Architecture"],
+    "description": "Advanced backend patterns, system design, and scalable architecture notes.",
+    "size": "835 KB",
+    "source": "/study/books/BOOK 3 Advanced Backend & System Design1.pdf"
+  },
+  {
+    "id": "book-1-python-backend-foundations",
+    "title": "BOOK 1 Python Backend Foundations",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Python", "Backend", "Foundations"],
+    "description": "Foundational Python backend concepts for APIs, services, and server-side workflows.",
+    "size": "611 KB",
+    "source": "/study/books/BOOK 1 PYTHON BACKEND FOUNDATIONS1.pdf"
+  },
+  {
+    "id": "book-2-backend-development-databases",
+    "title": "BOOK 2 Backend Development and Databases",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Backend", "Databases", "SQL"],
+    "description": "Backend database design, data modeling, queries, and persistence fundamentals.",
+    "size": "752 KB",
+    "source": "/study/books/BOOK 2 Backend Development & Databases.pdf"
+  },
+  {
+    "id": "python-engineering",
+    "title": "Python Engineering",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Python", "Engineering", "Programming"],
+    "description": "Python engineering practices for writing reliable, maintainable applications.",
+    "size": "2,437 KB",
+    "source": "/study/books/Python Engineering.pdf"
+  },
+  {
+    "id": "python-for-backend-development",
+    "title": "Python for Backend Development",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Python", "Backend", "APIs"],
+    "description": "A backend-focused Python guide covering API thinking and service foundations.",
+    "size": "1,908 KB",
+    "source": "/study/books/Python for Backend Development.pdf"
+  },
+  {
+    "id": "backend-engineering-to-ai-systems",
+    "title": "Backend Engineering to AI Systems",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Backend", "AI Systems", "Engineering"],
+    "description": "A bridge from backend engineering foundations to AI-powered system design.",
+    "size": "1,626 KB",
+    "source": "/study/books/Backend Engineering to AI Systems.pdf"
+  },
+  {
+    "id": "python-dsa",
+    "title": "PYTHON DSA",
+    "author": "Ishfaq Dar / Curated",
+    "category": "Technical",
+    "tags": ["Python", "DSA", "Algorithms"],
+    "description": "Python data structures and algorithms material for coding practice and revision.",
+    "size": "1,794 KB",
+    "source": "/study/books/PYTHON DSA.pdf"
+  }
+]

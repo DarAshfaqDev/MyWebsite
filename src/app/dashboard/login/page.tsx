@@ -2,6 +2,7 @@
 
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import * as React from "react";
 
 export default function LoginPage() {
@@ -57,6 +58,7 @@ export default function LoginPage() {
               id="email"
               name="email"
               type="email"
+              autoComplete="username"
               required
               className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             />
@@ -69,9 +71,18 @@ export default function LoginPage() {
               id="password"
               name="password"
               type="password"
+              autoComplete="current-password"
               required
               className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             />
+          </div>
+          <div className="flex justify-end -mt-2">
+            <Link
+              href="/dashboard/login/forgot-password"
+              className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+            >
+              Forgot password?
+            </Link>
           </div>
           {error && (
             <p className="text-sm text-red-500">{error}</p>

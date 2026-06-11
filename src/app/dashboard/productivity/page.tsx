@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Plus, CheckCircle, Circle } from "lucide-react";
+import { Plus, CheckCircle, Circle, ExternalLink, Target } from "lucide-react";
+import { getProjects } from "@/lib/data";
 
 interface Task {
   id: string;
@@ -15,15 +16,30 @@ export default function ProductivityPage() {
   const [note, setNote] = React.useState("");
   const [newTask, setNewTask] = React.useState("");
 
+  const lifeos = React.useMemo(() => getProjects().find((p) => p.title === "LifeOS AI"), []);
+
   React.useEffect(() => {
     const stored = localStorage.getItem("dashboard-tasks");
-    if (stored) setTasks(JSON.parse(stored));
+    if (stored) {
+      setTasks(JSON.parse(stored));
+    } else {
+      const seed: Task[] = [
+        { id: "lo-habit-1", text: "Review LifeOS AI daily habit streak", done: false, date: new Date().toISOString().split("T")[0] },
+        { id: "lo-goal-1", text: "Update career goal progress in LifeOS AI", done: false, date: new Date().toISOString().split("T")[0] },
+        { id: "lo-goal-2", text: "Complete AI coaching session on LifeOS AI", done: false, date: new Date().toISOString().split("T")[0] },
+        { id: "lo-habit-2", text: "Log today's habits in LifeOS AI", done: false, date: new Date().toISOString().split("T")[0] },
+      ];
+      setTasks(seed);
+      localStorage.setItem("dashboard-tasks", JSON.stringify(seed));
+    }
     const savedNote = localStorage.getItem("dashboard-note");
     if (savedNote) setNote(savedNote);
   }, []);
 
   React.useEffect(() => {
-    localStorage.setItem("dashboard-tasks", JSON.stringify(tasks));
+    if (tasks.length > 0) {
+      localStorage.setItem("dashboard-tasks", JSON.stringify(tasks));
+    }
   }, [tasks]);
 
   function addTask() {
@@ -45,6 +61,35 @@ export default function ProductivityPage() {
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Productivity Center</h1>
         <p className="text-sm text-zinc-500 mt-1">Tasks, notes, and goals.</p>
       </div>
+
+      {lifeos && (
+        <div className="p-5 mb-6 rounded-2xl border border-emerald-200/50 dark:border-emerald-700/30 bg-emerald-50/50 dark:bg-emerald-900/10">
+          <div className="flex items-start justify-between">
+            <div>
+              <h3 className="font-semibold text-sm text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+                <Target className="h-4 w-4 text-emerald-600" />
+                Connected: LifeOS AI
+              </h3>
+              <p className="text-xs text-zinc-500 mt-1 max-w-lg">{lifeos.description.slice(0, 200)}...</p>
+            </div>
+            <a href={lifeos.liveUrl} target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-medium hover:bg-emerald-700 transition-colors">
+              Open App <ExternalLink className="h-3 w-3" />
+            </a>
+          </div>
+          <div className="flex gap-3 mt-3">
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">
+              AI-powered coaching
+            </span>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
+              Habit tracking
+            </span>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400">
+              Career planning
+            </span>
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-700/50 bg-white dark:bg-zinc-900">

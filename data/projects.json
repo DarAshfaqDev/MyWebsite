@@ -53,5 +53,12 @@
     "technologies": ["React", "Vite", "TypeScript", "Tailwind CSS", "Supabase", "Zustand", "html2canvas", "jspdf", "lucide-react", "react-hot-toast", "react-router-dom"],
     "liveUrl": "https://al-kowser-academy.vercel.app",
     "githubUrl": "https://github.com/DarAshfaqDev/Al-Kowser-Academy"
+  },
+  {
+    "title": "Unified Islamic Knowledge Portal",
+    "description": "A unified static portal merging HanafiWeb@ and Sunni-Islamic-Website into one site. Features topic-based entry cards, a searchable archive, and 30+ preserved HTML pages with downloadable PDF books.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "liveUrl": "https://unified-islamic-website.vercel.app",
+    "githubUrl": "https://github.com/DarAshfaqDev/MyWebsite"
   }
 ]

@@ -2,7 +2,7 @@
   {
     "title": "Data analyst",
     "description": "My primary portfolio website showcasing projects, skills, and experience.",
-    "url": "https://dar-ishfaq-1.github.io/my_portfolio/",
+    "url": "https://dar-ishfaq-1.github.io/My_Portfolio_Website/",
     "category": "Portfolio"
   },
   {
@@ -33,6 +33,12 @@
     "title": "Al-Kowser Academy",
     "description": "Premium Islamic LMS with student/admin dashboards, course player, certificates, bookmarks, and support ticketing.",
     "url": "https://al-kowser-academy.vercel.app",
+    "category": "Learning Platform"
+  },
+  {
+    "title": "Unified Islamic Knowledge Portal",
+    "description": "Merged portal combining HanafiWeb@ and Sunni-Islamic-Website into one unified site. Features topic-based cards, searchable archive, and 30+ preserved HTML pages.",
+    "url": "https://unified-islamic-website.vercel.app",
     "category": "Learning Platform"
   }
 ]

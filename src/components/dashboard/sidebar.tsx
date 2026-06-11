@@ -10,6 +10,7 @@ import {
   BookOpen,
   FileText,
   CheckSquare,
+  Globe,
   LogOut,
   Home,
 } from "lucide-react";
@@ -22,6 +23,8 @@ const navItems = [
   { href: "/dashboard/learning", label: "Learning", icon: BookOpen },
   { href: "/dashboard/content", label: "Content", icon: FileText },
   { href: "/dashboard/productivity", label: "Productivity", icon: CheckSquare },
+  { href: "/dashboard/platforms", label: "Platforms", icon: Globe },
+  { href: "/study-corner", label: "Study Corner", icon: BookOpen },
 ];
 
 export function DashboardSidebar() {
