@@ -176,17 +176,25 @@ function BookCard({ book, index, variant, onPay, onRead }: {
   );
 }
 
+const apiFileUrl = (filePath: string, mode: string) => {
+  const clean = filePath.replace(/^\//, "");
+  return `/api/books/pdf?file=${encodeURIComponent(clean)}&mode=${mode}`;
+};
+
 export function Books() {
   const books = getBooks();
-  const islamicBooks = books.filter((b) => b.group === "islamic");
+  const islamicBooks = books.filter((b) => b.group === "islamic").map((b) => ({
+    ...b,
+    pdfUrl: apiFileUrl(b.pdfUrl || "", "download"),
+  }));
   const comingSoonBooks = books.filter((b) => b.group === "tech" && comingSoonTitles.has(b.title));
   const studyLibraryBooks = (studyBooksData as StudyBook[]).map((sb) => ({
     title: sb.title,
     description: sb.description,
     category: sb.category,
     tags: sb.tags,
-    pdfUrl: sb.source,
-    readUrl: sb.source,
+    pdfUrl: apiFileUrl(sb.source, "download"),
+    readUrl: apiFileUrl(sb.source, "read"),
     author: sb.author,
     pages: undefined,
     version: undefined,
@@ -250,7 +258,7 @@ export function Books() {
               index={i}
               variant="study"
               onPay={(b) => setPayBook(b)}
-              onRead={(b) => window.open(b.pdfUrl, "_blank")}
+              onRead={(b) => window.open((b as any).readUrl + "#toolbar=0", "_blank")}
             />
           ))}
         </SectionGrid>
