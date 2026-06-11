@@ -1,5 +1,5 @@
 import { StatsCard } from "@/components/dashboard/stats-card";
-import { Briefcase, Code, BookOpen, FileText } from "lucide-react";
+import { Briefcase, Code, BookOpen, FileText, CheckSquare } from "lucide-react";
 
 export default function DashboardHome() {
   return (
@@ -9,11 +9,12 @@ export default function DashboardHome() {
         <p className="text-sm text-zinc-500 mt-1">Your personal operating system at a glance.</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
         <StatsCard label="Job Applications" value={12} icon={<Briefcase className="h-4 w-4" />} trend="+3 this month" />
         <StatsCard label="Freelance Projects" value={8} icon={<Code className="h-4 w-4" />} />
         <StatsCard label="Books Read" value={6} icon={<BookOpen className="h-4 w-4" />} trend="+2 this year" />
         <StatsCard label="Articles Published" value={4} icon={<FileText className="h-4 w-4" />} />
+        <StatsCard label="Tasks" value="—" icon={<CheckSquare className="h-4 w-4" />} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -42,6 +43,7 @@ export default function DashboardHome() {
           <div className="grid grid-cols-2 gap-3">
             {[
               { label: "Add Job", href: "/dashboard/jobs" },
+              { label: "Add Task", href: "/dashboard/todo" },
               { label: "Track Proposal", href: "/dashboard/freelancing" },
               { label: "Log Learning", href: "/dashboard/learning" },
               { label: "New Note", href: "/dashboard/productivity" },

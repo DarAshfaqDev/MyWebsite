@@ -38,6 +38,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     signIn: "/dashboard/login",
   },
   callbacks: {
+    async signIn({ user, account }) {
+      if (account?.provider === "google") {
+        const allowedEmail = process.env.DASHBOARD_USERNAME;
+        return user.email === allowedEmail;
+      }
+      return true;
+    },
     authorized({ auth: session }) {
       return !!session?.user;
     },

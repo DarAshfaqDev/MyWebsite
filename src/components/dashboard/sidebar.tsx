@@ -22,7 +22,8 @@ const navItems = [
   { href: "/dashboard/freelancing", label: "Freelancing", icon: Code },
   { href: "/dashboard/learning", label: "Learning", icon: BookOpen },
   { href: "/dashboard/content", label: "Content", icon: FileText },
-  { href: "/dashboard/productivity", label: "Productivity", icon: CheckSquare },
+  { href: "/dashboard/todo", label: "To-Do List", icon: CheckSquare },
+  { href: "/dashboard/productivity", label: "Productivity", icon: FileText },
   { href: "/dashboard/platforms", label: "Platforms", icon: Globe },
   { href: "/dashboard/payments", label: "Payments", icon: BookOpen },
 ];

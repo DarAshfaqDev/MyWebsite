@@ -76,11 +76,11 @@ function AuthModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 }
 
 function BookCard({ book, index, variant, onPay, onRead }: {
-  book: Book & { comingSoon?: boolean; author?: string };
+  book: Book & { comingSoon?: boolean; author?: string; fileParam?: string };
   index: number;
   variant: "islamic" | "coming-soon" | "study";
   onPay?: (book: Book) => void;
-  onRead?: (book: Book & { author?: string }) => void;
+  onRead?: (book: Book & { author?: string; fileParam?: string }) => void;
 }) {
   const colors = categoryColors[book.category] || defaultColors;
   const { data: session } = useSession();
@@ -162,11 +162,18 @@ function BookCard({ book, index, variant, onPay, onRead }: {
                 </button>
               </>
             ) : (
-              <button onClick={() => requireAuth(() => window.open(book.pdfUrl, "_blank"))}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-all active:scale-[0.98]">
-                <Download className="h-4 w-4" />
-                Download PDF
-              </button>
+              <>
+                <button onClick={() => requireAuth(() => onRead?.(book))}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all active:scale-[0.98]">
+                  <BookOpen className="h-4 w-4" />
+                  Read
+                </button>
+                <button onClick={() => requireAuth(() => window.open(book.pdfUrl, "_blank"))}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-all active:scale-[0.98]">
+                  <Download className="h-4 w-4" />
+                  Download PDF
+                </button>
+              </>
             )}
           </div>
         </CardContent>
@@ -189,6 +196,8 @@ export function Books() {
   const islamicBooks = books.filter((b) => b.group === "islamic").map((b) => ({
     ...b,
     pdfUrl: apiFileUrl(b.pdfUrl || "", "download"),
+    readUrl: apiFileUrl(b.pdfUrl || "", "read"),
+    fileParam: bookFileName(b.pdfUrl || ""),
   }));
   const comingSoonBooks = books.filter((b) => b.group === "tech" && comingSoonTitles.has(b.title));
   const studyLibraryBooks = (studyBooksData as StudyBook[]).map((sb) => ({
@@ -204,6 +213,7 @@ export function Books() {
     version: undefined,
   }));
   const [payBook, setPayBook] = React.useState<Book | null>(null);
+  const [readPayBook, setReadPayBook] = React.useState<Book | null>(null);
 
   return (
     <Section
@@ -226,7 +236,18 @@ export function Books() {
         </div>
         <SectionGrid>
           {islamicBooks.map((book, i) => (
-            <BookCard key={book.title} book={book} index={i} variant="islamic" />
+            <BookCard
+              key={book.title}
+              book={book}
+              index={i}
+              variant="islamic"
+              onRead={(b) =>
+                window.open(
+                  `/books/read?file=${encodeURIComponent((b as any).fileParam || "")}`,
+                  "_blank"
+                )
+              }
+            />
           ))}
         </SectionGrid>
       </div>
@@ -264,7 +285,7 @@ export function Books() {
               onPay={(b) => setPayBook(b)}
               onRead={(b) =>
                 window.open(
-                  `/books/read?file=${encodeURIComponent((b as any).fileParam || "")}`,
+                  `/books/read?file=${encodeURIComponent((b as any).fileParam || "")}&paid=true&title=${encodeURIComponent(b.title)}`,
                   "_blank"
                 )
               }
