@@ -148,7 +148,7 @@ export function Hero() {
         >
           <div className="mb-8 inline-block">
             <div className="relative">
-              <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1 mx-auto shadow-lg shadow-blue-500/20 dark:shadow-blue-500/10">
+              <div className="w-48 h-48 md:w-60 md:h-60 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1 mx-auto shadow-lg shadow-blue-500/20 dark:shadow-blue-500/10">
                 <img
                   src={profile.photo}
                   alt={profile.name}
