@@ -8,7 +8,7 @@
     "tags": ["rag", "langchain", "chromadb", "llms", "ai"],
     "publishedAt": "2025-12-15",
     "readingTime": 12,
-    "status": "published"
+    "status": "coming-soon"
   },
   {
     "title": "Data Pipeline Design Patterns",
@@ -19,7 +19,7 @@
     "tags": ["data-pipelines", "etl", "architecture", "python"],
     "publishedAt": "2025-11-20",
     "readingTime": 10,
-    "status": "published"
+    "status": "coming-soon"
   },
   {
     "title": "The Complete Guide to SQL Window Functions",
@@ -30,7 +30,7 @@
     "tags": ["sql", "window-functions", "database", "analytics"],
     "publishedAt": "2025-10-05",
     "readingTime": 15,
-    "status": "published"
+    "status": "coming-soon"
   },
   {
     "title": "Multi-Agent AI Systems: Architecture and Implementation",
@@ -41,7 +41,7 @@
     "tags": ["agents", "multi-agent", "langgraph", "ai-systems"],
     "publishedAt": "2026-01-10",
     "readingTime": 18,
-    "status": "published"
+    "status": "coming-soon"
   },
   {
     "title": "How to Learn JavaScript Without Tutorial Fatigue",
