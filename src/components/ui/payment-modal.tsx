@@ -71,7 +71,7 @@ export function PaymentModal({ open, onClose, bookTitle, pdfUrl, pages }: Paymen
 
         <div className="px-6 pb-6">
           <div className="bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl p-5 mb-5">
-            <img src="/study/upi-qr.jpeg" alt="UPI QR Code"
+            <img src="/upi-qr.jpeg" alt="UPI QR Code"
               className="w-48 h-48 mx-auto rounded-xl shadow-sm object-cover"
               onError={(e) => {
                 const target = e.currentTarget;
