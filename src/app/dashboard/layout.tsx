@@ -8,8 +8,8 @@ export default function DashboardLayout({
   return (
     <div className="flex min-h-screen">
       <DashboardSidebar />
-      <main className="flex-1 bg-zinc-50 dark:bg-zinc-950 overflow-auto">
-        <div className="p-6 lg:p-8 max-w-6xl">
+      <main className="flex-1 bg-zinc-50 dark:bg-zinc-950 overflow-auto min-w-0">
+        <div className="p-4 sm:p-6 lg:p-8 pt-16 sm:pt-6 lg:pt-8 max-w-6xl">
           {children}
         </div>
       </main>

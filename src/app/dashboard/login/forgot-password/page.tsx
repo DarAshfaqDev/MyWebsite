@@ -29,8 +29,8 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-950">
-      <div className="w-full max-w-sm mx-auto p-8">
+    <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-950 px-4">
+      <div className="w-full max-w-sm mx-auto py-8">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
             Reset Password
@@ -42,7 +42,7 @@ export default function ForgotPasswordPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">
               Email
             </label>
             <input
@@ -51,7 +51,7 @@ export default function ForgotPasswordPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              className="w-full px-4 py-3 sm:py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             />
           </div>
 
@@ -64,7 +64,7 @@ export default function ForgotPasswordPage() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full py-2.5 px-4 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black font-medium text-sm hover:opacity-90 disabled:opacity-50 transition-opacity"
+            className="w-full py-3 sm:py-2.5 px-4 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black font-medium text-sm hover:opacity-90 disabled:opacity-50 transition-opacity"
           >
             {status === "loading" ? "Sending..." : "Send Recovery Email"}
           </button>
@@ -73,7 +73,7 @@ export default function ForgotPasswordPage() {
         <p className="text-center mt-6">
           <Link
             href="/dashboard/login"
-            className="text-sm text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300"
+            className="text-sm text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 py-1"
           >
             Back to sign in
           </Link>

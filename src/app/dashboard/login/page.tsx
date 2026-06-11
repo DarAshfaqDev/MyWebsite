@@ -40,8 +40,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-950">
-      <div className="w-full max-w-sm mx-auto p-8">
+    <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-950 px-4">
+      <div className="w-full max-w-sm mx-auto py-8">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
             Dashboard
@@ -51,7 +51,7 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">
               Email
             </label>
             <input
@@ -60,11 +60,11 @@ export default function LoginPage() {
               type="email"
               autoComplete="username"
               required
-              className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              className="w-full px-4 py-3 sm:py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+            <label htmlFor="password" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5">
               Password
             </label>
             <input
@@ -73,13 +73,13 @@ export default function LoginPage() {
               type="password"
               autoComplete="current-password"
               required
-              className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              className="w-full px-4 py-3 sm:py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             />
           </div>
           <div className="flex justify-end -mt-2">
             <Link
               href="/dashboard/login/forgot-password"
-              className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+              className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors py-1"
             >
               Forgot password?
             </Link>
@@ -90,7 +90,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 px-4 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black font-medium text-sm hover:opacity-90 disabled:opacity-50 transition-opacity"
+            className="w-full py-3 sm:py-2.5 px-4 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black font-medium text-sm hover:opacity-90 disabled:opacity-50 transition-opacity"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>
@@ -118,9 +118,9 @@ export default function LoginPage() {
             setGoogleLoading(true);
             signIn("google", { callbackUrl: "/dashboard" });
           }}
-          className="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium text-sm hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors disabled:opacity-50"
+          className="w-full flex items-center justify-center gap-3 py-3 sm:py-2.5 px-4 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-medium text-sm hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors disabled:opacity-50"
         >
-          <svg className="h-5 w-5" viewBox="0 0 24 24">
+          <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4" />
             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
             <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
