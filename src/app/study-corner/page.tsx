@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Search, BookOpen, FileText, Download, X, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Search, BookOpen, FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import studyBooks from "../../../data/study-books.json";
 
 interface StudyBook {
@@ -24,7 +23,6 @@ export default function StudyCornerPage() {
   const [search, setSearch] = React.useState("");
   const [category, setCategory] = React.useState("All");
   const [page, setPage] = React.useState(1);
-  const [reader, setReader] = React.useState<StudyBook | null>(null);
 
   const filtered = React.useMemo(() => {
     return books.filter((b) => {
@@ -41,15 +39,6 @@ export default function StudyCornerPage() {
   React.useEffect(() => {
     setPage(1);
   }, [search, category]);
-
-  React.useEffect(() => {
-    if (reader) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => { document.body.style.overflow = ""; };
-  }, [reader]);
 
   return (
     <div className="min-h-screen pt-20 pb-16">
@@ -121,13 +110,9 @@ export default function StudyCornerPage() {
                 <div className="flex items-center justify-between pt-3 border-t border-zinc-100 dark:border-zinc-800 mt-auto">
                   <span className="text-[10px] text-zinc-400"><FileText className="h-3 w-3 inline mr-1" />{book.size}</span>
                   <div className="flex gap-1.5">
-                    <button onClick={() => setReader(book)}
+                    <button onClick={() => window.open(book.source, "_blank")}
                       className="px-3 py-1.5 rounded-lg bg-zinc-900 dark:bg-white text-white dark:text-black text-[10px] font-medium hover:opacity-90 transition-opacity">
                       Read
-                    </button>
-                    <button onClick={() => window.open(book.source, "_blank")}
-                      className="px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 text-[10px] font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
-                      <Download className="h-3 w-3" />
                     </button>
                   </div>
                 </div>
@@ -164,34 +149,6 @@ export default function StudyCornerPage() {
           </div>
         )}
       </div>
-
-      {reader && (
-        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm" onClick={() => setReader(null)}>
-          <div className="absolute inset-4 sm:inset-8 bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-zinc-700 shrink-0">
-              <div className="min-w-0 flex-1">
-                <h2 className="font-semibold text-sm text-zinc-900 dark:text-zinc-100 truncate">{reader.title}</h2>
-                <p className="text-xs text-zinc-500 truncate">{reader.author} · {reader.size}</p>
-              </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <a href={reader.source} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700 text-xs text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
-                  <ExternalLink className="h-3 w-3" /> Open
-                </a>
-                <button onClick={() => setReader(null)}
-                  className="p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-                  <X className="h-4 w-4 text-zinc-500" />
-                </button>
-              </div>
-            </div>
-            <div className="flex-1 bg-zinc-100 dark:bg-zinc-800">
-              <object data={reader.source} type="application/pdf" className="w-full h-full" aria-label="PDF viewer">
-                <embed src={reader.source} type="application/pdf" className="w-full h-full" />
-              </object>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
