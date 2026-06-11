@@ -139,124 +139,126 @@ export function Hero() {
         <BarChart3 className="h-4 w-4" />
       </FloatingShape>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
-        {/* Photo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="mb-8 inline-block">
-            <div className="relative">
-              <div className="w-48 h-48 md:w-60 md:h-60 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1 mx-auto shadow-lg shadow-blue-500/20 dark:shadow-blue-500/10">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+          {/* Photo column */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="order-2 md:order-1 flex justify-center md:justify-end"
+          >
+            <div className="relative w-full max-w-sm">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-blue-500/10">
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent z-10" />
                 <img
                   src={profile.photo}
                   alt={profile.name}
-                  className="w-full h-full rounded-full object-cover object-top bg-zinc-200 dark:bg-zinc-700"
+                  className="w-full h-[50vh] md:h-[75vh] object-cover object-top bg-zinc-200 dark:bg-zinc-700"
                 />
               </div>
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute bottom-2 right-1 w-5 h-5 bg-green-400 border-2 border-white dark:border-zinc-900 rounded-full"
-              />
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 via-purple-500/10 to-pink-500/20 blur-3xl -z-10 rounded-3xl" />
+              <div className="absolute -inset-px rounded-2xl border border-white/10 dark:border-white/5 pointer-events-none" />
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Name */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-            {profile.name}
-          </h1>
-        </motion.div>
-
-        {/* Rotating roles */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-3"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-zinc-800/60 backdrop-blur-sm border border-zinc-200/50 dark:border-zinc-700/50">
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">I&apos;m a</span>
-            <motion.span
-              key={role}
-              initial={{ opacity: 0, y: 5 }}
-              animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: -5 }}
-              className="text-sm font-semibold gradient-text flex items-center gap-1.5"
+          {/* Text column */}
+          <div className="order-1 md:order-2 text-center md:text-left">
+            {/* Name */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
-              {roleIcons[role]}
-              {role}
-            </motion.span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
+                {profile.name}
+              </h1>
+            </motion.div>
+
+            {/* Rotating roles */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-3"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-zinc-800/60 backdrop-blur-sm border border-zinc-200/50 dark:border-zinc-700/50">
+                <span className="text-sm text-zinc-500 dark:text-zinc-400">I&apos;m a</span>
+                <motion.span
+                  key={role}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: -5 }}
+                  className="text-sm font-semibold gradient-text flex items-center gap-1.5"
+                >
+                  {roleIcons[role]}
+                  {role}
+                </motion.span>
+              </div>
+            </motion.div>
+
+            {/* Tagline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <p className="text-base md:text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl mb-8 leading-relaxed md:mx-0 mx-auto">
+                {profile.tagline}
+              </p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap items-center gap-3 md:justify-start justify-center"
+            >
+              <a href="#about">
+                <Button variant="default" size="lg">
+                  <Compass className="mr-2 h-4 w-4" />
+                  Explore My World
+                </Button>
+              </a>
+              <a href="#websites">
+                <Button variant="outline" size="lg">
+                  <Globe className="mr-2 h-4 w-4" />
+                  My Websites
+                </Button>
+              </a>
+              <a href="#profiles">
+                <Button variant="outline" size="lg">
+                  <User className="mr-2 h-4 w-4" />
+                  My Profiles
+                </Button>
+              </a>
+              <a href="#publications">
+                <Button variant="ghost" size="lg">
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  My Publications
+                </Button>
+              </a>
+              <a href="https://lifeos-aiproject.vercel.app" target="_blank" rel="noopener noreferrer">
+                <Button variant="default" size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white border-0">
+                  <Sparkles className="mr-2 h-4 w-4" />
+                  LifeOS AI
+                </Button>
+              </a>
+              <a href="/study-corner">
+                <Button variant="outline" size="lg">
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  Study Corner
+                </Button>
+              </a>
+              <a href="https://code-verse-academy.vercel.app" target="_blank" rel="noopener noreferrer">
+                <Button variant="default" size="lg" className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white border-0">
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  CodeVerse Academy
+                </Button>
+              </a>
+            </motion.div>
           </div>
-        </motion.div>
-
-        {/* Tagline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <p className="text-base md:text-lg text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-            {profile.tagline}
-          </p>
-        </motion.div>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-3"
-        >
-          <a href="#about">
-            <Button variant="default" size="lg">
-              <Compass className="mr-2 h-4 w-4" />
-              Explore My World
-            </Button>
-          </a>
-          <a href="#websites">
-            <Button variant="outline" size="lg">
-              <Globe className="mr-2 h-4 w-4" />
-              My Websites
-            </Button>
-          </a>
-          <a href="#profiles">
-            <Button variant="outline" size="lg">
-              <User className="mr-2 h-4 w-4" />
-              My Profiles
-            </Button>
-          </a>
-          <a href="#publications">
-            <Button variant="ghost" size="lg">
-              <BookOpen className="mr-2 h-4 w-4" />
-              My Publications
-            </Button>
-          </a>
-          <a href="https://lifeos-aiproject.vercel.app" target="_blank" rel="noopener noreferrer">
-            <Button variant="default" size="lg" className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white border-0">
-              <Sparkles className="mr-2 h-4 w-4" />
-              LifeOS AI
-            </Button>
-          </a>
-          <a href="/study-corner">
-            <Button variant="outline" size="lg">
-              <BookOpen className="mr-2 h-4 w-4" />
-              Study Corner
-            </Button>
-          </a>
-          <a href="https://code-verse-academy.vercel.app" target="_blank" rel="noopener noreferrer">
-            <Button variant="default" size="lg" className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white border-0">
-              <BookOpen className="mr-2 h-4 w-4" />
-              CodeVerse Academy
-            </Button>
-          </a>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
