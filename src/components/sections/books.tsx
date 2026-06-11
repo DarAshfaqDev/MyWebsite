@@ -2,13 +2,25 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Download, BookOpen, BookMarked, Star, ShoppingCart } from "lucide-react";
+import { Download, BookOpen, BookMarked, Star, ShoppingCart, ExternalLink, Clock, LogIn, X } from "lucide-react";
 import { Section, SectionGrid } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { getBooks } from "@/lib/data";
 import type { Book } from "@/lib/types";
 import { PaymentModal } from "@/components/ui/payment-modal";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import studyBooksData from "../../../data/study-books.json";
+
+const comingSoonTitles = new Set([
+  "Python for Data Analytics",
+  "SQL Mastery",
+  "Power BI: From Data to Dashboard",
+  "Machine Learning Engineering",
+  "Generative AI & LLMs",
+  "Full Stack Development with Next.js",
+]);
 
 const categoryColors: Record<string, { gradient: string; border: string }> = {
   Python: { gradient: "from-blue-500/10 to-blue-600/5 dark:from-blue-500/20", border: "border-blue-200/50 dark:border-blue-700/30" },
@@ -18,12 +30,66 @@ const categoryColors: Record<string, { gradient: string; border: string }> = {
   "Generative AI": { gradient: "from-pink-500/10 to-pink-600/5 dark:from-pink-500/20", border: "border-pink-200/50 dark:border-pink-700/30" },
   "Full Stack Development": { gradient: "from-orange-500/10 to-orange-600/5 dark:from-orange-500/20", border: "border-orange-200/50 dark:border-orange-700/30" },
   Islamic: { gradient: "from-emerald-600/10 to-teal-600/5 dark:from-emerald-500/20", border: "border-emerald-200/50 dark:border-emerald-700/30" },
+  Technical: { gradient: "from-blue-500/10 to-blue-600/5 dark:from-blue-500/20", border: "border-blue-200/50 dark:border-blue-700/30" },
+  "Self-Development": { gradient: "from-rose-500/10 to-rose-600/5 dark:from-rose-500/20", border: "border-rose-200/50 dark:border-rose-700/30" },
+  Reference: { gradient: "from-amber-500/10 to-amber-600/5 dark:from-amber-500/20", border: "border-amber-200/50 dark:border-amber-700/30" },
 };
 
 const defaultColors = { gradient: "from-zinc-500/10 to-zinc-600/5 dark:from-zinc-500/20", border: "border-zinc-200/50 dark:border-zinc-700/30" };
 
-function BookCard({ book, index, onPay }: { book: Book; index: number; onPay?: (book: Book) => void }) {
+interface StudyBook {
+  id: string;
+  title: string;
+  author: string;
+  category: string;
+  tags: string[];
+  description: string;
+  size: string;
+  source: string;
+}
+
+function AuthModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const router = useRouter();
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" onClick={onClose}>
+      <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-sm bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl overflow-hidden p-6 text-center">
+        <button onClick={onClose} className="absolute top-4 right-4 p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+          <X className="h-4 w-4 text-zinc-500" />
+        </button>
+        <div className="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mx-auto mb-4">
+          <LogIn className="h-7 w-7 text-blue-600 dark:text-blue-400" />
+        </div>
+        <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">Sign In Required</h2>
+        <p className="text-sm text-zinc-500 mb-6">Please sign in to access books, downloads, and purchases.</p>
+        <button onClick={() => { onClose(); router.push("/dashboard/login"); }}
+          className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-opacity">
+          <LogIn className="h-4 w-4" />
+          Sign In
+        </button>
+        <button onClick={onClose} className="mt-2 text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">
+          Continue browsing
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function BookCard({ book, index, variant, onPay, onRead }: {
+  book: Book & { comingSoon?: boolean; author?: string };
+  index: number;
+  variant: "islamic" | "coming-soon" | "study";
+  onPay?: (book: Book) => void;
+  onRead?: (book: Book & { author?: string }) => void;
+}) {
   const colors = categoryColors[book.category] || defaultColors;
+  const { data: session } = useSession();
+  const [showAuth, setShowAuth] = React.useState(false);
+
+  const requireAuth = (action: () => void) => {
+    if (!session) setShowAuth(true);
+    else action();
+  };
 
   return (
     <motion.div
@@ -35,8 +101,8 @@ function BookCard({ book, index, onPay }: { book: Book; index: number; onPay?: (
       <Card className={`h-full flex flex-col group card-premium bg-gradient-to-br ${colors.gradient} ${colors.border}`}>
         <CardContent className="p-6 flex flex-col h-full">
           <div className="flex items-start gap-4 mb-4">
-            <div className={`w-14 h-18 rounded-xl bg-gradient-to-br ${book.group === "islamic" ? "from-emerald-500 to-teal-600" : "from-emerald-400 to-green-600"} flex items-center justify-center text-white shadow-lg shrink-0`}>
-              {book.group === "islamic" ? <Star className="h-6 w-6" /> : <BookMarked className="h-6 w-6" />}
+            <div className={`w-14 h-18 rounded-xl bg-gradient-to-br ${variant === "islamic" ? "from-emerald-500 to-teal-600" : variant === "coming-soon" ? "from-zinc-400 to-zinc-500" : "from-blue-500 to-indigo-600"} flex items-center justify-center text-white shadow-lg shrink-0`}>
+              {variant === "islamic" ? <Star className="h-6 w-6" /> : variant === "coming-soon" ? <Clock className="h-6 w-6" /> : <BookMarked className="h-6 w-6" />}
             </div>
             <div className="min-w-0 flex-1">
               <div className="flex items-start justify-between gap-2 mb-1">
@@ -58,6 +124,11 @@ function BookCard({ book, index, onPay }: { book: Book; index: number; onPay?: (
                     {book.pages} pages
                   </Badge>
                 )}
+                {variant === "coming-soon" && (
+                  <Badge variant="secondary" className="text-[10px] bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-200 dark:border-amber-700">
+                    Coming Soon
+                  </Badge>
+                )}
               </div>
             </div>
           </div>
@@ -72,31 +143,35 @@ function BookCard({ book, index, onPay }: { book: Book; index: number; onPay?: (
             ))}
           </div>
           <div className="flex flex-wrap gap-2 mt-auto">
-            {book.group === "islamic" ? (
+            {variant === "coming-soon" ? (
+              <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-500 text-sm font-medium cursor-default">
+                <Clock className="h-4 w-4" />
+                Coming Soon
+              </span>
+            ) : variant === "study" ? (
               <>
-                <a href={book.pdfUrl} target="_blank" rel="noopener noreferrer" download
+                <button onClick={() => requireAuth(() => onRead?.(book))}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all active:scale-[0.98]">
+                  <BookOpen className="h-4 w-4" />
+                  Read
+                </button>
+                <button onClick={() => requireAuth(() => onPay?.(book as Book))}
                   className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-all active:scale-[0.98]">
-                  <Download className="h-4 w-4" />
-                  Download PDF
-                </a>
-                {book.epubUrl && (
-                  <a href={book.epubUrl} target="_blank" rel="noopener noreferrer" download
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all active:scale-[0.98]">
-                    <BookOpen className="h-4 w-4" />
-                    ePub
-                  </a>
-                )}
+                  <ShoppingCart className="h-4 w-4" />
+                  Pay &amp; Download
+                </button>
               </>
             ) : (
-              <button onClick={() => onPay?.(book)}
+              <button onClick={() => requireAuth(() => window.open(book.pdfUrl, "_blank"))}
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:opacity-90 transition-all active:scale-[0.98]">
-                <ShoppingCart className="h-4 w-4" />
-                Pay &amp; Download
+                <Download className="h-4 w-4" />
+                Download PDF
               </button>
             )}
           </div>
         </CardContent>
       </Card>
+      <AuthModal open={showAuth} onClose={() => setShowAuth(false)} />
     </motion.div>
   );
 }
@@ -104,7 +179,18 @@ function BookCard({ book, index, onPay }: { book: Book; index: number; onPay?: (
 export function Books() {
   const books = getBooks();
   const islamicBooks = books.filter((b) => b.group === "islamic");
-  const techBooks = books.filter((b) => b.group === "tech");
+  const comingSoonBooks = books.filter((b) => b.group === "tech" && comingSoonTitles.has(b.title));
+  const studyLibraryBooks = (studyBooksData as StudyBook[]).map((sb) => ({
+    title: sb.title,
+    description: sb.description,
+    category: sb.category,
+    tags: sb.tags,
+    pdfUrl: sb.source,
+    readUrl: sb.source,
+    author: sb.author,
+    pages: undefined,
+    version: undefined,
+  }));
   const [payBook, setPayBook] = React.useState<Book | null>(null);
 
   return (
@@ -128,7 +214,22 @@ export function Books() {
         </div>
         <SectionGrid>
           {islamicBooks.map((book, i) => (
-            <BookCard key={book.title} book={book} index={i} />
+            <BookCard key={book.title} book={book} index={i} variant="islamic" />
+          ))}
+        </SectionGrid>
+      </div>
+
+      <div className="mb-14">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="h-8 w-1 rounded-full bg-amber-500" />
+          <div>
+            <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Technical Library — Coming Soon</h3>
+            <p className="text-xs text-zinc-500">Premium publications in development. Stay tuned.</p>
+          </div>
+        </div>
+        <SectionGrid>
+          {comingSoonBooks.map((book, i) => (
+            <BookCard key={book.title} book={book} index={i} variant="coming-soon" />
           ))}
         </SectionGrid>
       </div>
@@ -137,13 +238,20 @@ export function Books() {
         <div className="flex items-center gap-3 mb-6">
           <div className="h-8 w-1 rounded-full bg-blue-500" />
           <div>
-            <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Technical Library</h3>
-            <p className="text-xs text-zinc-500">Guides on programming, data science, AI, and full-stack development.</p>
+            <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Study Corner Library</h3>
+            <p className="text-xs text-zinc-500">Curated learning resources available for reading and download.</p>
           </div>
         </div>
         <SectionGrid>
-          {techBooks.map((book, i) => (
-            <BookCard key={book.title} book={book} index={i} onPay={setPayBook} />
+          {studyLibraryBooks.map((book, i) => (
+            <BookCard
+              key={book.title}
+              book={book}
+              index={i}
+              variant="study"
+              onPay={(b) => setPayBook(b)}
+              onRead={(b) => window.open(b.pdfUrl, "_blank")}
+            />
           ))}
         </SectionGrid>
       </div>
