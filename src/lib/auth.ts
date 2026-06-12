@@ -1,22 +1,16 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
-const googleEnabled = !!(process.env.AUTH_GOOGLE_ID && process.env.AUTH_GOOGLE_SECRET);
-
-function createGoogleProvider() {
-  try {
-    const Google = require("next-auth/providers/google").default;
-    return Google({
-      clientId: process.env.AUTH_GOOGLE_ID!,
-      clientSecret: process.env.AUTH_GOOGLE_SECRET!,
-    });
-  } catch {
-    console.warn("Google OAuth credentials invalid — skipping Google provider");
-    return null;
-  }
+let GoogleProvider: any = null;
+try {
+  GoogleProvider = require("next-auth/providers/google").default;
+} catch {
+  // Google provider not available
 }
 
-const providers: any[] = [
+const googleEnabled = !!(GoogleProvider && process.env.AUTH_GOOGLE_ID && process.env.AUTH_GOOGLE_SECRET);
+
+const providers = [
   Credentials({
     name: "credentials",
     credentials: {
@@ -39,8 +33,12 @@ const providers: any[] = [
 ];
 
 if (googleEnabled) {
-  const gp = createGoogleProvider();
-  if (gp) providers.push(gp);
+  providers.push(
+    GoogleProvider({
+      clientId: process.env.AUTH_GOOGLE_ID!,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET!,
+    })
+  );
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
