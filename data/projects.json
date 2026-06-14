@@ -14,7 +14,7 @@
     "githubUrl": "https://github.com/DarAshfaqDev/lifeos-ai"
   },
   {
-    "title": "Analytics Portfolio",
+    "title": "Analyst Portfolio",
     "description": "A comprehensive portfolio website showcasing my skills, projects, and professional journey as a full stack developer.",
     "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
     "liveUrl": "https://dar-ishfaq-1.github.io/My_Portfolio_Website/",
@@ -26,6 +26,13 @@
     "technologies": ["Node.js", "Express", "MongoDB", "REST API"],
     "liveUrl": "https://back-end-portfolio-psi.vercel.app/index.html",
     "githubUrl": "https://github.com/DarAshfaqDev/MyPortfolioWebSite"
+  },
+  {
+    "title": "Slide-to-Sketch Note Studio",
+    "description": "A visual learning companion that transforms plain-text DSA notes into beautifully styled, notebook-style slides with interactive algorithm visualizations. Export as PNG, JPEG, or multi-page PDF.",
+    "technologies": ["React", "Vite", "JavaScript", "Tailwind CSS", "html2canvas", "jsPDF", "lucide-react"],
+    "liveUrl": "https://slide-sketch-studio.vercel.app",
+    "githubUrl": "https://github.com/DarAshfaqDev/NotesCreationWeb"
   },
   {
     "title": "Mubarakh Soob Portfolio",
