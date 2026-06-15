@@ -24,7 +24,7 @@
     "title": "Backend Portfolio",
     "description": "Dedicated backend development portfolio highlighting server-side projects, APIs, and database work.",
     "technologies": ["Node.js", "Express", "MongoDB", "REST API"],
-    "liveUrl": "https://back-end-portfolio-psi.vercel.app/index.html",
+    "liveUrl": "https://my-website-psi-puce-82.vercel.app",
     "githubUrl": "https://github.com/DarAshfaqDev/MyPortfolioWebSite"
   },
   {
