@@ -40,5 +40,11 @@
     "description": "Merged portal combining HanafiWeb@ and Sunni-Islamic-Website into one unified site. Features topic-based cards, searchable archive, and 30+ preserved HTML pages.",
     "url": "https://unified-islamic-website.vercel.app",
     "category": "Learning Platform"
+  },
+  {
+    "title": "AI & ML Portfolio",
+    "description": "Professional portfolio showcasing AI/ML engineering work in Computer Vision, Deep Learning, Vision Transformers, and Explainable AI. Built with Next.js, Three.js, and Framer Motion.",
+    "url": "https://ai-and-ml-portfolio.vercel.app",
+    "category": "Portfolio"
   }
 ]
