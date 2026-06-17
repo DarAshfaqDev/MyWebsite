@@ -1,7 +1,8 @@
 [
   { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/ishfaq-dar-aaa277240/", "icon": "link2", "username": "Ishfaq Dar" },
   { "platform": "GitHub", "url": "https://github.com/Dar-Ishfaq-1", "icon": "star", "username": "Dar-Ishfaq-1" },
-  { "platform": "GitHub (Alt)", "url": "https://github.com/DarAshfaqDev", "icon": "star", "username": "DarAshfaqDev" },
+  { "platform": "GitHub (Developer)", "url": "https://github.com/DarAshfaqDev", "icon": "star", "username": "DarAshfaqDev" },
+  { "platform": "GitHub (Analyst)", "url": "https://github.com/Dar-Ishfaq-1", "icon": "star", "username": "Dar-Ishfaq-1" },
   { "platform": "X (Twitter)", "url": "https://x.com/Dar_ishaq1", "icon": "link2", "username": "@Dar_ishaq1" },
   { "platform": "Instagram", "url": "https://www.instagram.com/darishfaq469/", "icon": "hash", "username": "@darishfaq469" },
   { "platform": "Facebook", "url": "https://www.facebook.com/profile.php?id=61567635054020", "icon": "user", "username": "Ishfaq Dar" },

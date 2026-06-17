@@ -56,7 +56,7 @@ const platformColors: Record<string, string> = {
 };
 
 const platformGroups = [
-  { label: "Development & Code", key: "dev", platforms: ["GitHub", "GitHub (Alt)", "CodePen", "Figma"] },
+  { label: "Development & Code", key: "dev", platforms: ["GitHub", "GitHub (Developer)", "GitHub (Analyst)", "CodePen", "Figma"] },
   { label: "Professional & Social", key: "social", platforms: ["LinkedIn", "X (Twitter)", "Facebook", "Instagram", "Slack"] },
   { label: "Content & Creativity", key: "content", platforms: ["Medium", "Reddit", "Behance", "Dribbble"] },
   { label: "Contact", key: "contact", platforms: ["Email"] },
