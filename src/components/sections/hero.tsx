@@ -142,24 +142,12 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-          {/* Name (mobile: top, desktop: right column) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="order-1 md:order-2 text-center md:text-left"
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-              {profile.name}
-            </h1>
-          </motion.div>
-
-          {/* Photo (mobile: between name & roles, desktop: left column) */}
+          {/* Photo column - desktop only */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="order-2 md:order-1 flex justify-center md:justify-end"
+            className="hidden md:flex justify-center md:justify-end"
           >
             <div className="relative w-full max-w-sm">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-blue-500/10">
@@ -167,7 +155,7 @@ export function Hero() {
                 <img
                   src={profile.photo}
                   alt={profile.name}
-                  className="w-full h-[50vh] md:h-[75vh] object-cover object-top bg-zinc-200 dark:bg-zinc-700"
+                  className="w-full h-[75vh] object-cover object-top bg-zinc-200 dark:bg-zinc-700"
                 />
               </div>
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 via-purple-500/10 to-pink-500/20 blur-3xl -z-10 rounded-3xl" />
@@ -175,8 +163,40 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Roles, Tagline, Buttons (mobile: bottom, desktop: right column) */}
-          <div className="order-3 md:order-2 text-center md:text-left">
+          {/* Text column */}
+          <div className="text-center md:text-left">
+            {/* Name */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
+                {profile.name}
+              </h1>
+            </motion.div>
+
+            {/* Photo - mobile only (between name and roles) */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="md:hidden flex justify-center my-6"
+            >
+              <div className="relative w-56 h-56">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-blue-500/10 w-full h-full">
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent z-10" />
+                  <img
+                    src={profile.photo}
+                    alt={profile.name}
+                    className="w-full h-full object-cover object-top bg-zinc-200 dark:bg-zinc-700"
+                  />
+                </div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 via-purple-500/10 to-pink-500/20 blur-3xl -z-10 rounded-3xl" />
+                <div className="absolute -inset-px rounded-2xl border border-white/10 dark:border-white/5 pointer-events-none" />
+              </div>
+            </motion.div>
+
             {/* Rotating roles */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
