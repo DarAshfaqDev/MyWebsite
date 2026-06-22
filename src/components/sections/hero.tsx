@@ -142,7 +142,19 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-          {/* Photo column */}
+          {/* Name (mobile: top, desktop: right column) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="order-1 md:order-2 text-center md:text-left"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
+              {profile.name}
+            </h1>
+          </motion.div>
+
+          {/* Photo (mobile: between name & roles, desktop: left column) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -163,19 +175,8 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Text column */}
-          <div className="order-1 md:order-2 text-center md:text-left">
-            {/* Name */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
-                {profile.name}
-              </h1>
-            </motion.div>
-
+          {/* Roles, Tagline, Buttons (mobile: bottom, desktop: right column) */}
+          <div className="order-3 md:order-2 text-center md:text-left">
             {/* Rotating roles */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
