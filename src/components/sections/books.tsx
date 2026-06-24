@@ -33,6 +33,7 @@ const categoryColors: Record<string, { gradient: string; border: string }> = {
   Technical: { gradient: "from-blue-500/10 to-blue-600/5 dark:from-blue-500/20", border: "border-blue-200/50 dark:border-blue-700/30" },
   "Self-Development": { gradient: "from-rose-500/10 to-rose-600/5 dark:from-rose-500/20", border: "border-rose-200/50 dark:border-rose-700/30" },
   Reference: { gradient: "from-amber-500/10 to-amber-600/5 dark:from-amber-500/20", border: "border-amber-200/50 dark:border-amber-700/30" },
+  Psychology: { gradient: "from-violet-500/10 to-violet-600/5 dark:from-violet-500/20", border: "border-violet-200/50 dark:border-violet-700/30" },
 };
 
 const defaultColors = { gradient: "from-zinc-500/10 to-zinc-600/5 dark:from-zinc-500/20", border: "border-zinc-200/50 dark:border-zinc-700/30" };
