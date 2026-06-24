@@ -121,21 +121,21 @@
   },
   {
     "id": "ai-ml-book-1",
-    "title": "AI & Machine Learning Book 1",
+    "title": "AI/ML Engineer Internship Interview Handbook",
     "author": "Ishfaq Dar / Curated",
     "category": "Technical",
-    "tags": ["AI", "Machine Learning", "Data Science"],
-    "description": "Comprehensive guide to artificial intelligence and machine learning fundamentals, algorithms, and practical applications.",
+    "tags": ["AI", "Machine Learning", "Interview", "Career"],
+    "description": "Comprehensive handbook covering AI/ML interview questions, algorithms, system design, and practical tips for landing an internship.",
     "size": "4,187 KB",
     "source": "/study/books/AI_ML_Book1_Final.pdf"
   },
   {
     "id": "psychology-book",
-    "title": "Psychology Book",
+    "title": "MIND AND GOVERNANCE",
     "author": "Ishfaq Dar / Curated",
     "category": "Psychology",
-    "tags": ["Psychology", "Mind", "Behavior"],
-    "description": "In-depth exploration of psychological principles, theories, and their practical applications in daily life.",
+    "tags": ["Psychology", "Mind", "Governance", "Self-Mastery"],
+    "description": "Exploration of the mind, self-governance, and the principles that shape thought, behavior, and personal mastery.",
     "size": "4,017 KB",
     "source": "/study/books/Psychology Book final.pdf"
   }
