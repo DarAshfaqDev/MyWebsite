@@ -16,6 +16,7 @@ import {
   Search,
   PenTool,
   Cpu,
+  Camera,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProfile, getRoles } from "@/lib/data";
@@ -270,6 +271,12 @@ export function Hero() {
                 <Button variant="outline" size="lg">
                   <BookOpen className="mr-2 h-4 w-4" />
                   Study Corner
+                </Button>
+              </a>
+              <a href="/picnic">
+                <Button variant="outline" size="lg">
+                  <Camera className="mr-2 h-4 w-4" />
+                  Picnic
                 </Button>
               </a>
               <a href="https://code-verse-academy.vercel.app" target="_blank" rel="noopener noreferrer">
