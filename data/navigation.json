@@ -7,5 +7,6 @@
   { "href": "/dashboard/payments", "label": "Payments", "section": "payments" },
   { "href": "#books", "label": "Library", "section": "books" },
   { "href": "#articles", "label": "Articles", "section": "articles" },
+  { "href": "/picnic", "label": "Picnic", "section": "picnic" },
   { "href": "#profiles", "label": "Profiles", "section": "profiles" }
 ]
