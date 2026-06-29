@@ -49,6 +49,13 @@
     "githubUrl": "https://github.com/DarAshfaqDev/Nur-Academy"
   },
   {
+    "title": "Picnic Memories",
+    "description": "A digital museum preserving 12+ years of annual picnic memories between three best friends from Kashmir. Features a visual timeline, gallery mosaic, guestbook, friendship wall, interactive statistics, and then-vs-now comparisons.",
+    "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Recharts", "next-themes", "sonner"],
+    "liveUrl": "https://my-website-psi-puce-82.vercel.app/picnic",
+    "githubUrl": "https://github.com/DarAshfaqDev/MyWebsite"
+  },
+  {
     "title": "Ali Nawaz Academy",
     "description": "Islamic learning platform offering Aalim courses, Seerah, and more. Built with React and Vite.",
     "technologies": ["React", "Vite", "JavaScript", "Tailwind CSS"],
